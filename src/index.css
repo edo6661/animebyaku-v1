@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--primary-bg: linear-gradient(
+			126deg,
+			#6a35ee 0%,
+			#9930ef 14.24%,
+			#5737ee 49.56%,
+			#795ceb 93.2%
+		);
+		--scroller-container: linear-gradient(
+			45deg,
+			transparent,
+			white 30%,
+			white 90%,
+			transparent
+		);
+	}
+	body {
+		@apply text-white  transition-all ease-in-out duration-500;
+	}
+	main {
+		@apply min-h-screen font-poppins;
+	}
+	header,
+	footer {
+		@apply font-lato py-2 xl:text-2xl font-bold md:text-xl px-8;
+	}
+	footer {
+		@apply bg-footer;
+	}
+	header {
+		@apply bg-header;
+	}
+	section {
+		@apply px-8;
+	}
+	img {
+		@apply max-w-full h-auto align-middle italic;
+	}
+	.primaryColor {
+		background: var(--primary-bg);
+	}
+	.blackBg {
+		background-color: var(--black-clr);
+	}
+
+	.containerButton {
+		filter: drop-shadow(
+				-14.719192504882812px 17.347618103027344px 84.10966491699219px rgba(143, 0, 255, 0.23)
+			)
+			drop-shadow(
+				15.770564079284668px -13.667821884155273px 112.49666595458984px rgba(255, 0, 0, 0.28)
+			);
+		flex-shrink: 0;
+	}
+
+	button {
+		@apply border-none font-poppins;
+	}
+	/* ! util */
+	.animeWord {
+		@apply text-unique font-bold;
+	}
+	.borderCard {
+		@apply border-primaryCard border-2 border-solid rounded-xl py-8;
+	}
+	.heading {
+		@apply lg:text-3xl md:text-2xl text-xl font-semibold text-center mb-8;
+	}
+	.flexBetween {
+		@apply flex justify-between items-center;
+	}
+	.wrapper {
+		@apply max-w-6xl mx-auto;
+	}
+	.dropdownButton {
+		@apply btn font-extrabold border-x-0 text-white border-y-4  border-opacity-30 border-white  bg-transparent;
+	}
+	.dropdownContent {
+		@apply font-poppins font-semibold;
+	}
+	.daisyInput {
+		@apply input input-bordered w-full bg-transparent;
+	}
+	.daisyInnerDropdown {
+		@apply p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52;
+	}
+	/* ! header */
+	nav {
+		@apply flexBetween wrapper md:gap-4 gap-12;
+	}
+	.logo {
+		@apply xl:w-24 md:w-20 w-16;
+	}
+	.middleNav {
+		@apply md:flexBetween hidden xl:gap-16 md:gap-2 gap-8;
+	}
+	.wrapperMiddleMobileNav {
+		@apply md:hidden fixed left-0 top-0 w-full h-screen bg-header text-white p-10 z-10;
+	}
+	.middleMobileNav {
+		@apply flex h-full flex-col items-center justify-start mt-20 gap-20 text-5xl;
+	}
+	.rightNav {
+		@apply flexBetween gap-4 z-10;
+	}
+	/* ! hero */
+	.sectionBanner {
+		background: url('/banner-edited.jpg');
+		mask: var(--scroller-container);
+		@apply h-80 w-full bg-no-repeat bg-top
+			bg-cover bg-fixed flex items-center justify-center z-0 relative;
+	}
+	.innerBanner {
+		@apply flex flex-col gap-4;
+	}
+	.titleBanner {
+		@apply xl:text-8xl lg:text-7xl  md:text-6xl sm:text-5xl text-4xl inline-block font-lato font-bold;
+	}
+	.descriptionBanner {
+		@apply md:text-2xl text-xl;
+	}
+	.titleBanner,
+	.descriptionBanner {
+		text-wrap: balance;
+	}
+	.star {
+		@apply sm:opacity-100 opacity-80 absolute;
+	}
+	/* ! top anime & manga & random anime */
+	.sectionTop {
+		@apply wrapper my-12 px-8;
+	}
+	.wrapperTop {
+		@apply grid gap-y-8 gap-x-3;
+		grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+	}
+	.innerTop {
+		@apply flex flex-col gap-y-2 text-center;
+	}
+	.innerTop p {
+		max-width: 208px;
+		text-align: center;
+	}
+	.topImage {
+		@apply h-80 w-52 object-cover rounded-t-xl rounded-b-md;
+	}
+	.sectionRandom {
+		@apply w-fit mx-auto;
+	}
+	.randomImage {
+		@apply object-cover rounded-t-xl rounded-b-md;
+	}
+	.wrapperRandom {
+		@apply flex justify-center;
+	}
+}
