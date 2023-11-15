@@ -117,7 +117,8 @@
 			bg-cover bg-fixed flex items-center justify-center z-0 relative;
 	}
 	.innerBanner {
-		@apply flex flex-col gap-4;
+		/* @apply flex flex-col gap-4; */
+		text-wrap: balance;
 	}
 	.titleBanner {
 		@apply xl:text-8xl lg:text-7xl  md:text-6xl sm:text-5xl text-4xl inline-block font-lato font-bold;
