@@ -11,14 +11,14 @@ const TopMangas = () => {
         Array(8).fill(null).map((_, index) => <SkeletonTopAnime key={index} />)
 
     ) : (
-        topManga.slice(0, 8).map((manga: MangaData, i: number) =>
+        topManga?.slice(0, 8).map((manga: MangaData, i: number) =>
             <TopManga key={i} {...manga} />
         )
     )
 
     console.log(err)
 
-    const errorAndError = isErr && <h2 className='text-3xl font-bold text-center'>{err.message || err.status}</h2>
+    const errorAndError = isErr && <h2 className='text-3xl font-bold text-center'>{err.message}</h2>
 
     return (
         <>

@@ -4,6 +4,9 @@ interface ResponseTopAnime {
 	data: AnimeData[];
 	pagination: Pagination;
 }
+interface ResponseRandomAnime {
+	data: RandomAnimeData;
+}
 interface ResponseTopManga {
 	data: MangaData[];
 	pagination: Pagination;
@@ -15,7 +18,7 @@ const getTopAnime = (response: ResponseTopAnime) => {
 const getTopManga = (response: ResponseTopManga) => {
 	return response && response.data ? response.data : [];
 };
-const getTopRandom = (response: ResponseTopAnime) => {
+const getTopRandom = (response: ResponseRandomAnime) => {
 	return response && response.data ? response.data : [];
 };
 

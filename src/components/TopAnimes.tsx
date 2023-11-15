@@ -12,14 +12,13 @@ const TopAnimes = () => {
         Array(8).fill(null).map((_, index) => <SkeletonTopAnime key={index} />)
 
     ) : (
-        topAnime.slice(0, 8).map((anime: AnimeData, i: number) =>
+        topAnime?.slice(0, 8).map((anime: AnimeData, i: number) =>
             <TopAnime key={i} {...anime} />
         )
     )
 
-    console.log(err)
 
-    const errorAndError = isErr && <h2 className='text-3xl font-bold text-center'>{err.message || err.status}</h2>
+    const errorAndError = isErr && <h2 className='text-3xl font-bold text-center'>{err.message}</h2>
 
     return (
         <>

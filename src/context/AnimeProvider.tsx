@@ -35,7 +35,9 @@ export const AnimeProvider = ({ children }: ChildrenType) => {
 		queryFn: () => getRequestRandom()
 	})
 
-	const randomAnime = randomsAnime ? getTopRandom(randomsAnime.data) : [];
+
+	// const randomAnime = randomsAnime ? getTopRandom(randomsAnime.data) : {};
+	const randomAnime = randomsAnime ? getTopRandom(randomsAnime.data) : undefined;
 
 	return (
 		<animeContext.Provider value={{

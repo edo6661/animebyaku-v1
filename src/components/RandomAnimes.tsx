@@ -6,14 +6,14 @@ import SkeletonTopAnime from './SkeletonTopAnime';
 
 const RandomAnimes = () => {
     const { randomAnime, loadingRandom, isErrorRandom: isErr, errorRandom: err } = useAnime();
-
+    console.log(randomAnime)
     const skeletonAndData = loadingRandom ? (
         <SkeletonTopAnime />
     ) : (
         <RandomAnime  {...randomAnime} />
     )
 
-    const errorAndError = isErr && <h2 className='text-3xl font-bold text-center'>{err.message || err.status}</h2>
+    const errorAndError = isErr && <h2 className='text-3xl font-bold text-center'>{err.message}</h2>
 
     return (
         <>

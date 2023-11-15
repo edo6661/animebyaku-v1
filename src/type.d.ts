@@ -7,22 +7,22 @@ interface AnimeType {
 	topAnimePage: number;
 	setTopAnimePage: React.Dispatch<React.SetStateAction<number>>;
 	isErrorTopAnime: boolean;
-	errorTopAnime: unknown;
+	errorTopAnime: any;
 
 	// ! top manga
 	topManga: MangaData[] | undefined;
 	loadingTopManga: boolean;
-	topPageManga: number;
-	setTopPageManga: React.Dispatch<React.SetStateAction<number>>;
+	topMangaPage: number;
+	setTopMangaPage: React.Dispatch<React.SetStateAction<number>>;
 	isErrorTopManga: boolean;
-	errorTopManga: unknown;
+	errorTopManga: any;
 
 	// ! random anime
 
-	randomAnime: AnimeData[] | undefined;
+	randomAnime: any;
 	loadingRandom: boolean;
 	isErrorRandom: boolean;
-	errorRandom: unknown;
+	errorRandom: any;
 }
 
 interface ChildrenType {
