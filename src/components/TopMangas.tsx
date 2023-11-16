@@ -16,7 +16,8 @@ const TopMangas = () => {
         )
     )
 
-    console.log(err)
+
+    // console.log(err)
 
     const errorAndError = isErr && <h2 className='text-3xl font-bold text-center'>{err.message}</h2>
 

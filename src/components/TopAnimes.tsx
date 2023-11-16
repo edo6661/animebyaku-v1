@@ -17,9 +17,7 @@ const TopAnimes = () => {
         )
     )
 
-
     const errorAndError = isErr && <h2 className='text-3xl font-bold text-center'>{err.message}</h2>
-
     return (
         <>
             <h1 className="heading">Top <span className="animeWord">Anime</span></h1>

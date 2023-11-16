@@ -19,7 +19,7 @@ const Star = ({ className, size }: { className: string, size: number }) => {
             }, 1000);
         }, 5000)
         return () => clearInterval(interval)
-    }, [controls])
+    }, [])
     return (
         <motion.div
             className={`${className} ${hide}`}

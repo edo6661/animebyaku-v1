@@ -5,7 +5,7 @@ const RandomAnime = ({ images, title }: RandomAnimeData) => {
     return (
         <>
             <div className="innerTop">
-            <img
+                <img
                     className="randomImage"
                     src={image_url} alt={title} />
                 <p>{title}</p>

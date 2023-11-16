@@ -19,7 +19,7 @@ interface AnimeType {
 
 	// ! random anime
 
-	randomAnime: any;
+	randomAnime: RandomAnimeData;
 	loadingRandom: boolean;
 	isErrorRandom: boolean;
 	errorRandom: any;
@@ -99,6 +99,8 @@ interface AnimeData {
 	title_english: string;
 	title_japanese: string;
 	title_synonyms: string[];
+	type: string;
+	year: number;
 }
 interface Pagination {
 	current_page: number;

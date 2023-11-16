@@ -6,7 +6,7 @@ import SkeletonTopAnime from './SkeletonTopAnime';
 
 const RandomAnimes = () => {
     const { randomAnime, loadingRandom, isErrorRandom: isErr, errorRandom: err } = useAnime();
-    console.log(randomAnime)
+    // console.log(randomAnime)
     const skeletonAndData = loadingRandom ? (
         <SkeletonTopAnime />
     ) : (

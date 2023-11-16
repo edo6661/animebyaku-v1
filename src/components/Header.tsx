@@ -1,22 +1,18 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { FaHamburger, FaSearch, FaWindowClose } from "react-icons/fa";
+import { useState } from 'react';
+import { FaHamburger, FaWindowClose } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import Dropdown from '../helpers/DropDown';
 import useWindowWidth from '../hooks/useWindowWidth';
-import SwitchTheme from '../locale/SwitchTheme';
 import { anime, chara, manga } from '../locale/navStuff';
-import toggleStlyeTheme from '../utils/theme';
+import InputSearch from './InputSearch';
 
 const Header = () => {
 
-    const [theme, setTheme] = useState(true);
     const [open, setOpen] = useState(false);
 
     const windowWidth = useWindowWidth()
 
-    useEffect(() => {
-        toggleStlyeTheme(theme)
-    }, [theme])
 
 
     const toggleNav = () => setOpen(prev => !prev)
@@ -29,13 +25,6 @@ const Header = () => {
         </>
     )
 
-    const inputSearch = (
-        <div className='relative flex items-center'>
-            <input type="text" placeholder="Type here" className="daisyInput" />
-            <button className='absolute right-2 '><FaSearch size={24} /></button>
-        </div>
-
-    )
 
     // ! animation framer-motion
     const menuVars = {
@@ -77,16 +66,18 @@ const Header = () => {
         <header>
             <nav>
                 <div className='z-10'>
-                    {!open && <img src="./logo.png" alt="" className='logo' />}
-
-
+                    {!open && (
+                        <Link to='/'>
+                            <img src='/logo.png' alt="Logo" className='logo' />
+                        </Link>
+                    )}
                 </div>
                 <div className='middleNav'>
                     {middleNav}
                 </div>
                 {windowWidth < 768 && (
                     <div className='flex-1'>
-                        {inputSearch}
+                        <InputSearch />
                     </div>
                 )}
 
@@ -112,8 +103,7 @@ const Header = () => {
                     )}
                 </AnimatePresence >
                 <div className='rightNav '>
-                    {!open && windowWidth > 768 && inputSearch}
-                    {!open && <SwitchTheme setTheme={setTheme} />}
+                    {!open && windowWidth > 768 && <InputSearch />}
                     <button className='cursor-pointer md:hidden block' onClick={toggleNav}>
                         {!open ? <FaHamburger size={26} /> : <FaWindowClose size={26} />}
                     </button>

@@ -8,6 +8,10 @@ export default {
 				poppins: ['Poppins', 'sans-serif'],
 				lato: ['Lato', 'serif'],
 			},
+			colors: {
+				main: '#272829',
+				myWhite: '#fff6e0',
+			},
 			backgroundColor: {
 				header: '#2c2c2c',
 				footer: '#282828',
@@ -20,6 +24,11 @@ export default {
 			borderColor: {
 				primaryInput: '#868e96',
 				primaryCard: '#495057',
+			},
+			gridTemplateColumns: {
+				'sm-auto-fit': 'repeat(auto-fit,minmax(8rem,1fr))',
+				'base-auto-fit': 'repeat(auto-fit,minmax(13rem,1fr))',
+				'md-auto-fit': 'repeat(auto-fit,minmax(9.30rem,1fr))',
 			},
 		},
 	},

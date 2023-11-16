@@ -77,7 +77,7 @@ interface RandomAnimeData {
 	favorites: number;
 	synopsis: string;
 	background: string;
-	season: string;
+	season: string | undefined;
 	year: number;
 	broadcast: Broadcast;
 	producers: Producer[];

@@ -78,6 +78,9 @@
 	.wrapper {
 		@apply max-w-6xl mx-auto;
 	}
+	.secondWrapper {
+		@apply max-w-5xl mx-auto;
+	}
 	.dropdownButton {
 		@apply btn font-extrabold border-x-0 text-white border-y-4  border-opacity-30 border-white  bg-transparent;
 	}
@@ -92,7 +95,7 @@
 	}
 	/* ! header */
 	nav {
-		@apply flexBetween wrapper md:gap-4 gap-12;
+		@apply flexBetween wrapper gap-4;
 	}
 	.logo {
 		@apply xl:w-24 md:w-20 w-16;
@@ -138,18 +141,25 @@
 		@apply wrapper my-12 px-8;
 	}
 	.wrapperTop {
-		@apply grid gap-y-8 gap-x-3;
-		grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+		@apply grid gap-y-8 gap-x-3 sm:grid-cols-base-auto-fit grid-cols-sm-auto-fit;
 	}
 	.innerTop {
-		@apply flex flex-col gap-y-2 text-center;
+		@apply flex flex-col gap-y-2 text-center mx-auto;
 	}
-	.innerTop p {
+	.innerTop .titleAnime {
 		max-width: 208px;
-		text-align: center;
+		margin-inline: auto;
+	}
+	.innerTop span,
+	.innerTop p {
+		text-wrap: balance;
+		@apply block text-myWhite;
+	}
+	.hoverImageTitle {
+		@apply font-semibold text-center text-lg;
 	}
 	.topImage {
-		@apply h-80 w-52 object-cover rounded-t-xl rounded-b-md;
+		@apply sm:h-72 sm:w-64 w-52 h-52 object-cover rounded-t-xl rounded-b-md mx-auto;
 	}
 	.sectionRandom {
 		@apply w-fit mx-auto;
@@ -159,5 +169,36 @@
 	}
 	.wrapperRandom {
 		@apply flex justify-center;
+	}
+	.hoveredImgAnime {
+		@apply w-full bg-main absolute rounded-xl py-6 px-2 z-10 text-start shadow-md shadow-main;
+	}
+	.genres {
+		@apply flex gap-1 flex-wrap justify-center my-4;
+	}
+	/* ! single anime & manga */
+	.singleAnimeSection {
+		@apply wrapper my-12;
+	}
+	.titleSingleAnime {
+		@apply mb-4;
+	}
+	.containerSingleAnime {
+		@apply grid grid-cols-md-auto-fit py-4 px-8 gap-4 rounded-xl;
+	}
+	.singleAnimeDetails {
+		@apply secondWrapper grid grid-cols-md-auto-fit gap-2 w-full;
+	}
+	.innerSingleAnimeDetails {
+		@apply flexBetween items-center w-full;
+	}
+	.singleAnimeDetails div span {
+		@apply opacity-20;
+	}
+	.secondSingleAnimeDetails {
+		@apply secondWrapper grid grid-cols-3 gap-8;
+	}
+	.secondSingleAnimeDetails div p {
+		text-wrap: balance;
 	}
 }

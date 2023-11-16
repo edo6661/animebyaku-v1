@@ -2,7 +2,7 @@ import BannerTitle from "./BannerTitle"
 
 const Banner = ({ welcomeSentence }: { welcomeSentence: string[] }) => {
     return (
-        <article className="innerBanner wrapper">
+        <article className=" wrapper">
             <div>
                 {welcomeSentence.map((letter: string, i: number) =>
                     <BannerTitle key={i} letter={letter} />
