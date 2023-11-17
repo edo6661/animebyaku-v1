@@ -8,10 +8,13 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import App from './App.tsx';
+import AllAnimeRecom from './components/AllAnimeRecom.tsx';
 import AllTopAnime from './components/AllTopAnime.tsx';
-import AllTopManga from './components/AllTopManga.tsx';
+import AnimeReviews from './components/AnimeReview/AnimeReviews.tsx';
+import NotFound from './components/NotFound.tsx';
 import { AnimeProvider } from './context/AnimeProvider.tsx';
 import './index.css';
+import HomeSingleAnime from './pages/HomeSingleAnime.tsx';
 import Homepage from './pages/Homepage.tsx';
 import SingleAnime from './pages/SingleAnime.tsx';
 import SingleManga from './pages/SingleManga.tsx';
@@ -26,10 +29,15 @@ const router = createBrowserRouter(
       <Route
         index
         element={<Homepage />} />
-      <Route path={`anime/:mal_id`} element={<SingleAnime />} />
+      <Route path={`anime/:mal_id`} element={<SingleAnime />}>
+        <Route index element={<HomeSingleAnime />} />
+        <Route path="recommendations" element={<AllAnimeRecom />} />
+        <Route path="reviews" element={<AnimeReviews />} />
+
+      </Route>
       <Route path={`manga/:mal_id`} element={<SingleManga />} />
       <Route path="/topAnime" element={<AllTopAnime />} />
-      <Route path="/topManga" element={<AllTopManga />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );

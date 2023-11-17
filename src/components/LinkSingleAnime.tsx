@@ -1,15 +1,12 @@
-import { Link } from "react-router-dom"
 // ! jadiin seperate component
+
+import { NavLink } from "react-router-dom"
 
 
 const LinkSingleAnime = () => {
     const Links = [
         {
-            to: '/overview',
-            title: 'overview'
-        },
-        {
-            to: '/recommendation',
+            to: `recommendations`,
             title: 'recommendation'
         },
         {
@@ -21,7 +18,7 @@ const LinkSingleAnime = () => {
             title: 'staff'
         },
         {
-            to: '/reviews',
+            to: 'reviews',
             title: 'reviews'
         },
         {
@@ -29,9 +26,22 @@ const LinkSingleAnime = () => {
             title: 'customlists'
         },
     ]
-    return Links.map((link) =>
-        <Link key={link.title} className="btn uppercase" to={link.to}>{link.title}</Link>
+
+    const isActiveClass = 'primaryColor '
+
+    return Links.map((link) => {
+        return (
+            <NavLink
+                key={link.title}
+                to={link.to}
+                className={({ isActive }) => `linkSingleAnime ${isActive && isActiveClass}`}
+            >
+                {link.title}
+            </NavLink>
+        )
+    }
     )
 }
+
 
 export default LinkSingleAnime

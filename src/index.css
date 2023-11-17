@@ -144,11 +144,12 @@
 		@apply grid gap-y-8 gap-x-3 sm:grid-cols-base-auto-fit grid-cols-sm-auto-fit;
 	}
 	.innerTop {
-		@apply flex flex-col gap-y-2 text-center mx-auto;
+		@apply flex flex-col gap-2 text-center mx-auto;
 	}
 	.innerTop .titleAnime {
 		max-width: 208px;
 		margin-inline: auto;
+		@apply font-semibold text-lg;
 	}
 	.innerTop span,
 	.innerTop p {
@@ -176,15 +177,18 @@
 	.genres {
 		@apply flex gap-1 flex-wrap justify-center my-4;
 	}
-	/* ! single anime & manga */
+	/* ! single anime + anime recoms */
 	.singleAnimeSection {
-		@apply wrapper my-12;
+		@apply wrapper my-10;
 	}
 	.titleSingleAnime {
 		@apply mb-4;
 	}
 	.containerSingleAnime {
-		@apply grid grid-cols-md-auto-fit py-4 px-8 gap-4 rounded-xl;
+		@apply grid grid-cols-md-auto-fit py-2 px-8 gap-4 rounded-xl;
+	}
+	.containerLinks {
+		@apply grid grid-cols-links-auto-fit py-2 px-8 gap-4 rounded-xl;
 	}
 	.singleAnimeDetails {
 		@apply secondWrapper grid grid-cols-md-auto-fit gap-2 w-full;
@@ -200,5 +204,21 @@
 	}
 	.secondSingleAnimeDetails div p {
 		text-wrap: balance;
+	}
+	.imgSingleAnime {
+		@apply rounded-xl object-cover h-full w-full;
+	}
+	.secondInnerSingleAnime {
+		@apply grid grid-cols-2 text-center;
+	}
+	.linkGenre {
+		@apply btn rounded-none sm:self-baseline
+		sm:col-span-1 col-span-2 px-5;
+	}
+	.wrapperAnimeRecom {
+		@apply secondWrapper grid sm:grid-cols-base-auto-fit grid-cols-sm-auto-fit gap-y-4 gap-x-2;
+	}
+	.linkSingleAnime {
+		@apply uppercase p-3 text-center hover:scale-105 shadow-primary transition-all duration-200;
 	}
 }

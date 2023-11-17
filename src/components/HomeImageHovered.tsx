@@ -14,8 +14,9 @@ type Props = {
     genres?: Genre[]
     studios?: Genre[]
     title: string;
+    votes?: number
 }
-const HomeImageHovered = ({ hover, episodes, rank, source, type, year, score, status, chapters, genres, studios, title }: Props) => {
+const HomeImageHovered = ({ hover, episodes, rank, source, type, year, score, status, chapters, genres, studios, title, votes }: Props) => {
 
 
     const divVars = {
@@ -55,13 +56,18 @@ const HomeImageHovered = ({ hover, episodes, rank, source, type, year, score, st
                     <span key={genre.mal_id} className='text-center'>{genre.name.split(" ").join(", ")}</span>
                 )}
             </div>
-            <div className="flexBetween items-center ">
-                <p>#{rank}</p>
-                <div className='relative right-0 flex items-center'>
-                    <IoStarSharp size={18} />
-                    <p className='ml-1'>{score}</p>
+            {rank && (
+                <div className="flexBetween items-center ">
+                    <p>#{rank}</p>
+                    <div className='relative right-0 flex items-center'>
+                        <IoStarSharp size={18} />
+                        <p className='ml-1'>{score}</p>
+                    </div>
                 </div>
-            </div>
+            )}
+            {votes && (
+                <p>{votes}</p>
+            )}
         </motion.div>
     )
 }

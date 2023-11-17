@@ -20,7 +20,7 @@ function App() {
     <>
       <Header />
 
-      <main>
+      <main className=''>
         <Outlet />
         {/* <Button onClick={handlePrev}>Prev</Button>
         <Button onClick={handleNext}>next</Button> */}

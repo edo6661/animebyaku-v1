@@ -15,6 +15,15 @@ interface ResponseSingleAnime {
 	data: RandomAnimeData;
 }
 
+interface ResponseRecomsAnime {
+	data: AnimeRecommendation[];
+}
+
+type ResponseReviewAnime = {
+	data: ReviewAnime[];
+	pagination: Pagination;
+};
+
 const getTopAnime = (response: ResponseTopAnime) => {
 	return response && response.data ? response.data : [];
 };
@@ -49,6 +58,7 @@ const getTopRandom = (response: ResponseRandomAnime) => {
 				explicit_genres: [],
 				favorites: 0,
 				genres: [],
+				streaming: [],
 				images: {
 					jpg: {
 						image_url: '',
@@ -152,4 +162,19 @@ const getTopAnimeById = (response: ResponseSingleAnime) => {
 		  };
 };
 
-export { getTopAnime, getTopAnimeById, getTopManga, getTopRandom };
+const getAnimeRecom = (response: ResponseRecomsAnime) => {
+	return response && response.data ? response.data : [];
+};
+
+const getAnimeReview = (response: ResponseReviewAnime) => {
+	return response && response.data ? response.data : [];
+};
+
+export {
+	getAnimeRecom,
+	getAnimeReview,
+	getTopAnime,
+	getTopAnimeById,
+	getTopManga,
+	getTopRandom,
+};

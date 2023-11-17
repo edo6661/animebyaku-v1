@@ -34,8 +34,26 @@ const getRequestAnimeById = async (id: string | undefined) => {
 	}
 };
 
+const getRequestAnimeRecommendations = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/anime/${id}/recommendations`);
+		return response;
+	} catch (err) {
+		// console.error(err);
+	}
+};
+const getRequestAnimeReview = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/anime/${id}/reviews`);
+		return response;
+	} catch (err) {
+		// console.error(err);
+	}
+};
+
 export {
 	getRequestAnimeById,
+	getRequestAnimeRecommendations,
 	getRequestRandom,
 	getRequestTopAnime,
 	getRequestTopManga,
