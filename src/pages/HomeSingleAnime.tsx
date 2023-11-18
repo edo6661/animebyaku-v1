@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
 import SingleAnimeRecom from "../components/AnimeRecoms"
 import SecondSingleAnimeDetails from "../components/SecondSingleAnimeDetails"
-import SingleAnimeDetails from "../components/SingleAnimeDetails"
 import UseSingleAnime from "../hooks/UseSingleAnime"
 
 const HomeSingleAnime = () => {
@@ -11,24 +10,7 @@ const HomeSingleAnime = () => {
 
     return (
         <>
-            <section className="singleAnimeSection">
-                <article className='flex flex-col gap-4'>
-                    <div className='singleAnimeDetails'>
-                        <div className='containerSingleAnime'>
-                            <SingleAnimeDetails
-                                title={anime?.title ?? ''}
-                                episodes={anime?.episodes ?? 0}
-                                studios={anime?.studios ?? []}
-                                season={anime?.season}
-                                score={anime?.score ?? 0}
-                                rank={anime?.rank ?? 0}
-                                year={anime?.year ?? 0}
-                            />
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <section className="singleAnimeSection">
+            <section className="">
                 {anime && (
                     <SecondSingleAnimeDetails
                         images={anime?.images}
@@ -38,6 +20,13 @@ const HomeSingleAnime = () => {
                         rating={anime?.rating}
                         status={anime?.status}
                         licensors={anime?.licensors}
+                        episodes={anime?.episodes ?? 0}
+                        studios={anime?.studios ?? []}
+                        season={anime?.season}
+                        score={anime?.score ?? 0}
+                        rank={anime?.rank ?? 0}
+                        year={anime?.year ?? 0}
+                        popularity={anime.popularity}
                     />
                 )}
             </section>

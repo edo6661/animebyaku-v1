@@ -7,10 +7,13 @@ export default {
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif'],
 				lato: ['Lato', 'serif'],
+				niconne: ['Niconne', 'cursive'],
 			},
 			colors: {
 				main: '#272829',
 				myWhite: '#fff6e0',
+				greenish: '#64ccc5',
+				pinky: '#F8BDEB',
 			},
 			backgroundColor: {
 				header: '#2c2c2c',

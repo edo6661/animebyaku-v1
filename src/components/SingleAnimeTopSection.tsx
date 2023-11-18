@@ -10,8 +10,8 @@ const SingleAnimeTopSection = ({ title, title_japanese }: Props) => {
     return (
         <>
             <div className='titleSingleAnime'>
-                <h2>{title}</h2>
-                <p className=' text-unique'>Japanese title: {title_japanese}</p>
+                <h2 className="text-semibold text-lg">{title}</h2>
+                <p className='text-pinky'>Japanese title: {title_japanese}</p>
             </div>
             <div className='containerLinks'>
                 <LinkSingleAnime />

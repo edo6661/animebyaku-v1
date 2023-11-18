@@ -11,10 +11,11 @@ interface Props {
     year: number;
     studios: Producer[];
     title: string;
+
 }
 
 
-const SingleAnimeDetails = ({ episodes, studios, season, score, rank, year, title }: Props) => {
+const SingleAnimeDetails = ({ episodes, studios, season, score, rank, year }: Props) => {
     return (
         <>
             <div className='innerSingleAnimeDetails'>

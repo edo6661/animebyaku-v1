@@ -1,13 +1,9 @@
-import { useParams } from "react-router-dom"
+import NotYet from "../components/NotYet/NotYet"
 const SingleManga = () => {
 
-    const { mal_id } = useParams()
+    // const { mal_id } = useParams()
 
-    return (
-        <section>
-            test {mal_id}
-        </section>
-    )
+    return <NotYet />
 }
 
 export default SingleManga

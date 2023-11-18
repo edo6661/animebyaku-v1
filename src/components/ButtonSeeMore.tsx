@@ -5,7 +5,7 @@ const
         return (
             <Button
                 rounded='xl'
-                className=' mt-4 text-center mx-auto block'>
+                className=' mt-4 text-center mx-auto block '>
                 {children}
             </Button>
         )

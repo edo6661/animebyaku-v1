@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Niconne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -43,8 +43,39 @@
 		@apply max-w-full h-auto align-middle italic;
 	}
 	.primaryColor {
-		background: var(--primary-bg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		font-family: inherit;
+		font-size: 13px;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.4px;
+		color: #516d91;
+
+		background-color: #e0e8ef;
+		border-style: solid;
+		border-width: 2px 2px 2px 2px;
+		border-color: rgba(255, 255, 255, 0.333);
+		border-radius: 40px 40px 40px 40px;
+		padding: 16px 24px 16px 28px;
+		transform: translate(0px, 0px) rotate(0deg);
+		transition: 0.2s;
+		box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
 	}
+	.primaryColor:hover {
+		background-color: #e5edf5;
+		color: #7e97b8;
+
+		box-shadow: -4px -2px 16px 0px #ffffff,
+			4px 2px 16px 0px rgb(95 157 231 / 48%);
+	}
+
+	.primaryColor:active {
+		box-shadow: none;
+	}
+
 	.blackBg {
 		background-color: var(--black-clr);
 	}
@@ -64,13 +95,13 @@
 	}
 	/* ! util */
 	.animeWord {
-		@apply text-unique font-bold;
+		@apply text-pinky font-bold;
 	}
 	.borderCard {
 		@apply border-primaryCard border-2 border-solid rounded-xl py-8;
 	}
 	.heading {
-		@apply lg:text-3xl md:text-2xl text-xl font-semibold text-center mb-8;
+		@apply lg:text-4xl md:text-3xl text-2xl font-semibold text-center mb-8;
 	}
 	.flexBetween {
 		@apply flex justify-between items-center;
@@ -136,6 +167,33 @@
 	.star {
 		@apply sm:opacity-100 opacity-80 absolute;
 	}
+	/* ! datebayo */
+	.requestedDatebayo {
+		@apply wrapper mt-4  mx-auto text-center;
+	}
+	.datebayoImg {
+		@apply md:w-36 sm:w-28 w-20;
+	}
+	.datebayoHeading {
+		@apply xl:text-6xl lg:text-5xl sm:text-3xl text-xl font-semibold font-niconne text-pinky;
+	}
+	.innerDatebayo {
+		@apply flex flex-col items-center justify-center gap-1;
+	}
+	.containerDatebayo {
+		@apply flex mx-auto justify-center items-center sm:gap-4;
+	}
+	.requestedDatebayo p {
+		text-wrap: balance;
+		@apply sm:text-xs text-sm font-extralight;
+	}
+	.requestedDatebayo input {
+		@apply min-w-[93px] w-full placeholder:px-4 py-1 bg-white text-black placeholder:text-sm placeholder:italic rounded-sm flex-1;
+	}
+	.hrVertical {
+		@apply bg-white w-full h-1 rounded-sm;
+	}
+
 	/* ! top anime & manga & random anime */
 	.sectionTop {
 		@apply wrapper my-12 px-8;
@@ -220,5 +278,26 @@
 	}
 	.linkSingleAnime {
 		@apply uppercase p-3 text-center hover:scale-105 shadow-primary transition-all duration-200;
+	}
+	.synopsisContainer {
+		@apply flex flex-col gap-2;
+	}
+	.specialWordAnimeDetails {
+		@apply text-pinky font-semibold;
+	}
+	.innerDetailsMd {
+		@apply bg-main font-semibold rounded-md p-3 text-lg flex flex-col gap-4;
+	}
+	.secondInnerDetailsMd {
+		@apply flex-col items-center justify-center text-center;
+	}
+	.innerContainer {
+		@apply flex-col flex m-4 gap-4 flex-1;
+	}
+	.innerDetails {
+		@apply flexBetween p-2;
+	}
+	.secondInnerDetails {
+		@apply flexBetween p-3 w-10/12;
 	}
 }

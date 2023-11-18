@@ -1,11 +1,9 @@
-import { useParams } from "react-router-dom";
+import NotYet from "../NotYet/NotYet";
 const AnimeReviews = () => {
-    const { mal_id } = useParams()
+    // const { mal_id } = useParams()
     return (
         <section className="secondWrapper">
-            <p>
-                {mal_id}
-            </p>
+            <NotYet />
         </section>)
 }
 

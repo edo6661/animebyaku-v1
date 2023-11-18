@@ -10,6 +10,7 @@ import {
 import App from './App.tsx';
 import AllAnimeRecom from './components/AllAnimeRecom.tsx';
 import AllTopAnime from './components/AllTopAnime.tsx';
+import AllTopManga from './components/AllTopManga.tsx';
 import AnimeReviews from './components/AnimeReview/AnimeReviews.tsx';
 import NotFound from './components/NotFound.tsx';
 import { AnimeProvider } from './context/AnimeProvider.tsx';
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path={`manga/:mal_id`} element={<SingleManga />} />
       <Route path="/topAnime" element={<AllTopAnime />} />
+      <Route path="/topManga" element={<AllTopManga />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

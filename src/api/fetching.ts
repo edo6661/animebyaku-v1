@@ -54,6 +54,7 @@ const getRequestAnimeReview = async (id: string | undefined) => {
 export {
 	getRequestAnimeById,
 	getRequestAnimeRecommendations,
+	getRequestAnimeReview,
 	getRequestRandom,
 	getRequestTopAnime,
 	getRequestTopManga,

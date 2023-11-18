@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import ButtonSeeMore from "../components/ButtonSeeMore";
+import DatebayoHeading from "../components/DatebayoHeading";
 import RandomAnimes from "../components/RandomAnimes";
 import Stars from "../components/Stars";
 import TopAnimes from "../components/TopAnimes";
@@ -12,8 +13,24 @@ const Homepage = () => {
 
     const welcomeSentence = "Welcome to Animez".split("");
 
-    const seeMoreTopAnime = !loadingTopAnime && <ButtonSeeMore> See More Anime</ButtonSeeMore>
-    const seeMoreTopManga = !loadingTopAnime && <ButtonSeeMore> See More Manga </ButtonSeeMore>
+    const seeMore = !loadingTopAnime && <ButtonSeeMore children="See More" />
+    
+    const seeMoreAnime = (
+        <div className="grid grid-cols-3 items-center gap-2">
+
+            <hr className="hrVertical" />
+            <Link className="seeMore" to='/topAnime'>{seeMore}</Link>
+            <hr className="hrVertical" />
+        </div>
+    )
+    const seeMoreManga = (
+        <div className="grid grid-cols-3 items-center gap-2">
+            <hr className="hrVertical" />
+            <Link className="seeMore whitespace-nowrap" to='/topManga'>{seeMore}</Link>
+            <hr className="hrVertical" />
+        </div>
+
+    )
 
     const annoying = (
         <>
@@ -33,24 +50,26 @@ const Homepage = () => {
                 <Banner welcomeSentence={welcomeSentence} />
             </section>
 
+            <section className="requestedDatebayo">
+                <DatebayoHeading />
+            </section>
+
             {/* ! top anime */}
             <section className="sectionTop ">
                 <TopAnimes />
-
-
-                <Link to='/topAnime'>{seeMoreTopAnime}</Link>
-            </section>
+                {seeMoreAnime}
+            </section >
 
             {/* ! top manga */}
-            <section className='sectionTop bg-main py-8 rounded-xl'>
+            < section className='sectionTop bg-main py-8 rounded-xl' >
                 <TopMangas />
-                <Link to='/topManga'>{seeMoreTopManga}</Link>
-            </section>
+                {seeMoreManga}
+            </section >
 
             {/* ! random anime */}
-            <section className='sectionRandom borderCard'>
+            < section className='sectionRandom borderCard' >
                 <RandomAnimes />
-            </section>
+            </section >
             {annoying}
         </>
     )

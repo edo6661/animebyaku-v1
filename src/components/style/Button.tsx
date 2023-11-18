@@ -15,7 +15,7 @@ interface ButtonProps {
 const Button = ({ children, onClick, color = 'pr', size = 'md', rounded = 'none', type = 'submit', className = '', disabled = false }: ButtonProps) => {
 
     const buttonStyle = variant(
-        'btn dark:text-white text-black disabled:opacity-70 disabled:cursor-not-allowed',
+        ' disabled:opacity-70 disabled:cursor-not-allowed',
         {
             color: {
                 pr: 'primaryColor',

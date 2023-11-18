@@ -9,7 +9,7 @@ const Banner = ({ welcomeSentence }: { welcomeSentence: string[] }) => {
                 )}
             </div>
             <div>
-                <p className='descriptionBanner'>Discover <span className="animeWord">anime</span>  and manga, Explore the world of <span className="animeWord">anime</span> and manga, Design inspired by <a className=" hover:underline" target="_blank" href="https://anime-planet.com"><span className="animeWord">anime</span>-planet</a> and api by <a className=" hover:underline" target="_blank" href="https://docs.api.jikan.moe/">
+                <p className='descriptionBanner'>Explore the world of <span className="animeWord">anime</span> and manga, Design inspired by <a className=" hover:underline" target="_blank" href="https://anime-planet.com"><span className="animeWord">anime</span>-planet</a> and api by <a className=" hover:underline" target="_blank" href="https://docs.api.jikan.moe/">
                     jikan. <span className="animeWord">moe</span></a></p>
             </div>
         </article>
