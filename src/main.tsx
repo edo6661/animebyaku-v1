@@ -15,10 +15,17 @@ import AnimeReviews from './components/AnimeReview/AnimeReviews.tsx';
 import NotFound from './components/NotFound.tsx';
 import { AnimeProvider } from './context/AnimeProvider.tsx';
 import './index.css';
+import AllAnimeCharacters from './pages/AllAnimeCharacters.tsx';
+import AllAnimeStaff from './pages/AllAnimeStaff.tsx';
 import HomeSingleAnime from './pages/HomeSingleAnime.tsx';
 import Homepage from './pages/Homepage.tsx';
 import SingleAnime from './pages/SingleAnime.tsx';
 import SingleManga from './pages/SingleManga.tsx';
+import AllMangaCharacters from './pages/manga/AllMangaCharacters.tsx';
+import AllMangaRecom from './pages/manga/AllMangaRecom.tsx';
+import AllMangaStaff from './pages/manga/AllMangaStaff.tsx';
+import HomeSingleManga from './pages/manga/HomeSingleManga.tsx';
+import MangaReviews from './pages/manga/MangaReviews.tsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter(
@@ -34,9 +41,17 @@ const router = createBrowserRouter(
         <Route index element={<HomeSingleAnime />} />
         <Route path="recommendations" element={<AllAnimeRecom />} />
         <Route path="reviews" element={<AnimeReviews />} />
+        <Route path="characters" element={<AllAnimeCharacters />} />
+        <Route path="staff" element={<AllAnimeStaff />} />
 
       </Route>
-      <Route path={`manga/:mal_id`} element={<SingleManga />} />
+      <Route path={`manga/:mal_id`} element={<SingleManga />}>
+        <Route index element={<HomeSingleManga />} />
+        <Route path="recommendations" element={<AllMangaRecom />} />
+        <Route path="reviews" element={<MangaReviews />} />
+        <Route path="characters" element={<AllMangaCharacters />} />
+        <Route path="staff" element={<AllMangaStaff />} />
+      </Route>
       <Route path="/topAnime" element={<AllTopAnime />} />
       <Route path="/topManga" element={<AllTopManga />} />
       <Route path="*" element={<NotFound />} />

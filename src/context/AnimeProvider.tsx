@@ -39,6 +39,8 @@ export const AnimeProvider = ({ children }: ChildrenType) => {
 	// const randomAnime = randomsAnime ? getTopRandom(randomsAnime.data) : {};
 	const randomAnime = getTopRandom(randomsAnime ? randomsAnime.data : undefined)
 
+	// ! anime
+
 	return (
 		<animeContext.Provider value={{
 			// ! top anime

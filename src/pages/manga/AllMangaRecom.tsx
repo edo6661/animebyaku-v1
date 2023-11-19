@@ -1,15 +1,19 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
-import UseAnimeRecom from "../hooks/UseAnimeRecom";
-import TemporaryError from "./TemporaryError";
-import TemporaryLoading from "./TemporaryLoading";
-const AllAnimeRecom = () => {
+import TemporaryError from '../../components/TemporaryError';
+import TemporaryLoading from '../../components/TemporaryLoading';
+import useMangaRecom from '../../hooks/manga/useMangaRecom';
+
+const AllMangaRecom = () => {
     const { mal_id } = useParams()
 
-    const { anime, isError, error, isLoading } = UseAnimeRecom(mal_id ?? '')
+    const { manga, isError, error, isLoading } = useMangaRecom(mal_id ?? '')
 
     if (isLoading) return <TemporaryLoading />
-    if (isError && error) return <TemporaryError message={error} />
+    if (isError || error) return <TemporaryError message={error ?? ''} />
+
+    const noManga = !manga.length && !isLoading && <h2 className=" col-span-full mx-auto text-center font-semibold sm:text-3xl text-2xl">0 data from api</h2>
+
 
     const imgVars = {
         initial: {
@@ -27,13 +31,14 @@ const AllAnimeRecom = () => {
         }
     }
 
-    if (!anime.length && !isLoading) return <h2 className='text-center font-bold text-2xl'>No Recom From Api</h2>
+    if (!manga.length && !isLoading) return <h2 className='text-center font-bold text-2xl'>No Recom From Api</h2>
 
 
     return (
         <section className="secondWrapper">
             <div className="wrapperAnimeRecom">
-                {anime.slice(0, 16).map((a) => {
+                {noManga}
+                {manga.slice(0, 16).map((a) => {
                     const { mal_id, title } = a.entry
                     const { webp } = a.entry.images
                     return (
@@ -61,4 +66,4 @@ const AllAnimeRecom = () => {
     )
 }
 
-export default AllAnimeRecom
+export default AllMangaRecom

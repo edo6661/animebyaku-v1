@@ -1,4 +1,4 @@
-import LinkSingleAnime from "./LinkSingleAnime";
+import LinkSingleAnime from "../LinkSingleAnime"
 
 const SingleAnimeTopSection = () => {
 

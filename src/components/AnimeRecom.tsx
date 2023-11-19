@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const AnimeRecom = ({ entry, votes }: AnimeRecommendation) => {
+const AnimeRecom = ({ entry, votes }: RecomMangaType) => {
 
     const { mal_id, images, title } = entry
     const { webp } = images

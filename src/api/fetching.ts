@@ -51,10 +51,90 @@ const getRequestAnimeReview = async (id: string | undefined) => {
 	}
 };
 
+const getRequestAnimeCharacter = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/anime/${id}/characters`);
+		return response;
+	} catch (err) {
+		console.error(err);
+	}
+};
+
+const getRequestAnimeStaff = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/anime/${id}/staff`);
+		return response;
+	} catch (error) {
+		console.error(error);
+	}
+};
+const getRequestAnimeNews = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/anime/${id}/news`);
+		return response;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+// ! manga
+
+const getRequestMangaById = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/manga/${id}/full`);
+		return response;
+	} catch (err) {
+		// console.error(err);
+	}
+};
+
+const getRequestMangaRecommendations = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/manga/${id}/recommendations`);
+		return response;
+	} catch (err) {
+		// console.error(err);
+	}
+};
+const getRequestMangaReview = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/manga/${id}/reviews`);
+		return response;
+	} catch (err) {
+		// console.error(err);
+	}
+};
+
+const getRequestMangaCharacter = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/manga/${id}/characters`);
+		return response;
+	} catch (err) {
+		// console.error(err);
+	}
+};
+
+const getRequestMangaStaff = async (id: string | undefined) => {
+	try {
+		const response = axiosAku.get(`/manga/${id}/staff`);
+		return response;
+	} catch (error) {
+		// console.error(error);
+	}
+};
+
 export {
 	getRequestAnimeById,
+	getRequestAnimeCharacter,
+	getRequestAnimeNews,
 	getRequestAnimeRecommendations,
 	getRequestAnimeReview,
+	getRequestAnimeStaff,
+	getRequestMangaById,
+	getRequestMangaCharacter,
+	getRequestMangaRecommendations,
+	getRequestMangaReview,
+	getRequestMangaStaff,
 	getRequestRandom,
 	getRequestTopAnime,
 	getRequestTopManga,

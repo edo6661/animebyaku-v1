@@ -1,26 +1,26 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import UseReview from "../../hooks/UseReview";
-import UseSingleAnime from "../../hooks/UseSingleAnime";
-import EmojiReactions from "../EmojiReactions";
-import HeaderSingleAnime from '../HeaderSingleAnime';
-import TemporaryError from "../TemporaryError";
-import TemporaryLoading from '../TemporaryLoading';
-import Button from '../style/Button';
+import EmojiReactions from '../../components/EmojiReactions';
+import HeaderSingleAnime from '../../components/HeaderSingleAnime';
+import TemporaryError from '../../components/TemporaryError';
+import TemporaryLoading from '../../components/TemporaryLoading';
+import Button from '../../components/style/Button';
+import useMangaReview from '../../hooks/manga/useMangaReviews';
+import useSingleManga from '../../hooks/manga/useSingleManga';
 
-const AnimeReviews = () => {
+const MangaReviews = () => {
     const { mal_id } = useParams()
 
     const [toggle, setToggle] = useState<Record<string, boolean>>({});
 
-    const { reviews, isLoading, isError, error } = UseReview(mal_id ?? '')
+    const { reviews, isLoading, isError, error } = useMangaReview(mal_id ?? '')
 
-    const { anime, isLoading: loadingAnime, isError: isErrorAnime, error: errorAnime } = UseSingleAnime(mal_id ?? '')
+    const { manga, isLoading: loadingAnime, isError: isErrorAnime, error: errorAnime } = useSingleManga(mal_id ?? '')
 
-    if (isLoading || loadingAnime) return <TemporaryLoading />
+    if (isLoading || loadingAnime) <TemporaryLoading />
     if (isError || error || isErrorAnime || errorAnime) <TemporaryError message={error ?? ''} />
 
-    const noReview = !reviews.length && !isLoading && <h2 className="text-center font-semibold sm:text-3xl text-2xl">Still Airing No Reviews Yet / 0 From Api</h2>
+    const noReview = !reviews.length && !isLoading && <h2 className="text-center font-semibold sm:text-3xl text-2xl">0 reviews from api</h2>
 
     // !(prev[mal_id] || false) digunakan untuk membalik nilai toggle[mal_id]. Jika toggle[mal_id] belum pernah diatur sebelumnya, itu akan dianggap false.
     const handleToggle = (mal_id: string) => {
@@ -31,7 +31,7 @@ const AnimeReviews = () => {
         <section className="secondWrapper">
             <article className="containerAllAnime">
                 <div className="containerImageAnime">
-                    <HeaderSingleAnime mal_id={mal_id ?? ''} image={anime?.images.webp.image_url ?? ''} />
+                    <HeaderSingleAnime mal_id={mal_id ?? ''} image={manga?.images.webp.image_url ?? ''} />
                 </div>
                 <div className="containerAnimeReviews">
                     {noReview}
@@ -81,4 +81,4 @@ const AnimeReviews = () => {
         </section >)
 }
 
-export default AnimeReviews
+export default MangaReviews

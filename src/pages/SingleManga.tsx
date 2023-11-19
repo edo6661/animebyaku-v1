@@ -1,9 +1,16 @@
-import NotYet from "../components/NotYet/NotYet"
+import { Outlet } from "react-router-dom";
+import SingleAnimeTopSection from "../components/SingleAnimeTopSection";
+
 const SingleManga = () => {
+    return (
+        <>
+            <section className='singleAnimeSection'>
+                <SingleAnimeTopSection />
+            </section>
+            <Outlet />
+        </>
 
-    // const { mal_id } = useParams()
-
-    return <NotYet />
+    )
 }
 
 export default SingleManga

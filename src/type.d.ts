@@ -1,13 +1,15 @@
 import { QueryFunctionContext } from 'react-query'; // import tipe ini jika Anda menggunakan react-query
 
 interface AnimeType {
+	errorTopAnime: AxiosError | null;
+	errorTopManga: AxiosError | null;
+	errorRandom: QueryError | null;
 	// ! top anime
 	topAnime: AnimeData[] | undefined;
 	loadingTopAnime: boolean;
 	topAnimePage: number;
 	setTopAnimePage: React.Dispatch<React.SetStateAction<number>>;
 	isErrorTopAnime: boolean;
-	errorTopAnime: any;
 
 	// ! top manga
 	topManga: MangaData[] | undefined;
@@ -15,14 +17,12 @@ interface AnimeType {
 	topMangaPage: number;
 	setTopMangaPage: React.Dispatch<React.SetStateAction<number>>;
 	isErrorTopManga: boolean;
-	errorTopManga: any;
 
 	// ! random anime
 
 	randomAnime: RandomAnimeData;
 	loadingRandom: boolean;
 	isErrorRandom: boolean;
-	errorRandom: any;
 }
 
 interface ChildrenType {

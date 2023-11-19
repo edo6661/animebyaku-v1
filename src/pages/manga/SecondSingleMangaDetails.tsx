@@ -1,32 +1,28 @@
 import { RxDividerVertical } from 'react-icons/rx';
-import upperFirst from "../helpers/upperFirst";
-import useWindowWidth from "../hooks/useWindowWidth";
+import useWindowWidth from '../../hooks/useWindowWidth';
 
 type Props = {
     images: RandomAnimeData['images'];
     title: RandomAnimeData['title'];
     synopsis: RandomAnimeData['synopsis'];
     genres: RandomAnimeData['genres'];
-    rating: RandomAnimeData['rating'];
     status: RandomAnimeData['status'];
-    licensors: RandomAnimeData['licensors'];
-    episodes: number;
     score: number;
     rank: number;
-    season: string | undefined;
-    year: number;
-    studios: Producer[];
-    popularity: number
-
+    popularity: number;
+    volumes: number;
+    authors: Author[];
+    chapters: number
 };
 
 
-const SecondSingleAnimeDetails = ({ images, title, synopsis, genres, status, episodes, studios, season, score, rank, year, popularity }: Props) => {
+
+const SecondSingleMangaDetails = ({ images, title, synopsis, genres, status, score, rank, popularity, volumes, chapters, authors }: Props) => {
 
     const windowWidth = useWindowWidth()
 
 
-    const lessMd = windowWidth < 786
+    const lessMd = windowWidth < 840
 
     const secondInnerDetails = (
         <>
@@ -58,8 +54,7 @@ const SecondSingleAnimeDetails = ({ images, title, synopsis, genres, status, epi
             <p>{synopsis}</p>
         </>
     )
-
-    return (
+    return (    
         <>
             {lessMd ? (
                 <article className={`containerAnimeDetails`}>
@@ -67,13 +62,13 @@ const SecondSingleAnimeDetails = ({ images, title, synopsis, genres, status, epi
                         <h2 className="headerAnimeDetails">{title}</h2>
                     </div>
                     <div>
-                        <img className={`mx-auto rounded-md `} src={images.webp.image_url} alt={title} />
+                        <img className={`mx-auto rounded-md`} src={images.webp.image_url} alt={title} />
                     </div>
                     <div className={`innerDetailsMd`}>
-                        <p className="text-center">{upperFirst(season)} {year}</p>
+                        <p className="text-center">{volumes} Volumes</p>
                         <div className="flexBetween">
-                            <p>{studios[0].name}</p>
-                            <p>{episodes} Eps</p>
+                            <p>{chapters ? `${chapters} Chapter` : '0 from api'} </p>
+                            <p>{authors[0].name}</p>
                             <p>{status == 'Finished Airing' ? 'Finish' : 'Airing'}</p>
                         </div>
                     </div>
@@ -95,11 +90,11 @@ const SecondSingleAnimeDetails = ({ images, title, synopsis, genres, status, epi
                         <div className="innerContainer">
                             <p className="text-xl font-semibold">{title}</p>
                             <div className="innerDetails ">
-                                <p>{upperFirst(season)} {year}  </p>
+                                <p>{chapters ? `${chapters} Chapter` : '0 from api'} </p>
                                 <span><RxDividerVertical size={32} /></span>
-                                <p>{studios[0].name}</p>
+                                <p>{authors[0].name}</p>
                                 <span><RxDividerVertical size={32} /></span>
-                                <p>{episodes} Eps</p>
+                                <p className="text-center">{volumes} Volumes</p>
                                 <span><RxDividerVertical size={32} /></span>
                                 <p>{status == 'Finished Airing' ? 'Finish' : 'Airing'}</p>
                                 <span><RxDividerVertical size={32} /></span>
@@ -125,4 +120,4 @@ const SecondSingleAnimeDetails = ({ images, title, synopsis, genres, status, epi
     )
 }
 
-export default SecondSingleAnimeDetails
+export default SecondSingleMangaDetails

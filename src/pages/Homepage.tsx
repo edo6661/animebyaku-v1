@@ -14,7 +14,7 @@ const Homepage = () => {
     const welcomeSentence = "Welcome to Animez".split("");
 
     const seeMore = !loadingTopAnime && <ButtonSeeMore children="See More" />
-    
+
     const seeMoreAnime = (
         <div className="grid grid-cols-3 items-center gap-2">
 

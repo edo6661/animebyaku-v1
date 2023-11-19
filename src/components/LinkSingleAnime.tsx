@@ -6,24 +6,16 @@ import { NavLink } from "react-router-dom"
 const LinkSingleAnime = () => {
     const Links = [
         {
-            to: `recommendations`,
-            title: 'recommendation'
-        },
-        {
-            to: '/characters',
+            to: 'characters',
             title: 'characters'
         },
         {
-            to: '/staff',
+            to: 'staff',
             title: 'staff'
         },
         {
             to: 'reviews',
             title: 'reviews'
-        },
-        {
-            to: '/customLists',
-            title: 'customlists'
         },
     ]
 
@@ -34,7 +26,7 @@ const LinkSingleAnime = () => {
             <NavLink
                 key={link.title}
                 to={link.to}
-                className={({ isActive }) => `linkSingleAnime ${isActive && isActiveClass}`}
+                className={({ isActive }) => `linkSingleAnime ${isActive && isActiveClass} text-base`}
             >
                 {link.title}
             </NavLink>
