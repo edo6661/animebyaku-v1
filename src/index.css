@@ -326,7 +326,7 @@
 		@apply grid md:grid-cols-3 grid-cols-1 gap-6;
 	}
 	.containerAnimeStaff {
-		@apply grid grid-cols-2 col-span-2 gap-2;
+		@apply grid sm:grid-cols-2 col-span-2 gap-2;
 	}
 	.innerAnimeStaff {
 		@apply flex bg-main rounded-xl;
@@ -372,7 +372,7 @@
 		@apply flex flex-col gap-4;
 	}
 	.detailsAnimeReviews {
-		@apply flex items-center gap-4 text-lg;
+		@apply sm:flex-row flex flex-col gap-4 text-lg;
 	}
 	.secondDetailsAnimeReviews {
 		@apply flex flex-col gap-1;
