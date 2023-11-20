@@ -1,21 +1,19 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
 import { FaHamburger, FaWindowClose } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Dropdown from '../helpers/DropDown';
+import useAnime from '../hooks/useAnime';
 import useWindowWidth from '../hooks/useWindowWidth';
 import { anime, chara, manga } from '../locale/navStuff';
 import InputSearch from './InputSearch';
 
 const Header = () => {
 
-    const [open, setOpen] = useState(false);
+    const { open, toggleNav } = useAnime()
 
     const windowWidth = useWindowWidth()
 
 
-
-    const toggleNav = () => setOpen(prev => !prev)
 
     const middleNav = (
         <>

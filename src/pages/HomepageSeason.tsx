@@ -33,7 +33,7 @@ const HomepageSeason = () => {
             <article className="secondWrapper flex">
                 {seasonList.filter(item => item.year === 2023).map((s, i) => {
                     return (
-                        <div className="flex" key={i}>
+                        <div className="flex flex-wrap mr-4 items-center" key={i}>
                             {s.seasons.map((singleSeason, index) => (
                                 <Button
                                     className="block"

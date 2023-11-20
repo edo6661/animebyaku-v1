@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import useAnime from '../hooks/useAnime';
 import useWindowWidth from '../hooks/useWindowWidth';
 interface ItemType {
 	subtitle: string;
@@ -12,6 +13,9 @@ interface DropdownType {
 }
 
 const Dropdown = ({ title, items }: DropdownType) => {
+
+	const { setOpen: setOpenNav } = useAnime()
+
 
 	const [isOpen, setIsOpen] = useState(false)
 
@@ -38,7 +42,7 @@ const Dropdown = ({ title, items }: DropdownType) => {
 			<ul className="daisyInnerDropdown">
 				{items.map((item, index) => (
 					<li key={index} className="dropdownContent">
-						<Link to={`${item.to}`}>{item.subtitle}</Link>
+						<Link onClick={() => setOpenNav(false)} to={`${item.to}`}>{item.subtitle}</Link>
 					</li>
 				))}
 			</ul>

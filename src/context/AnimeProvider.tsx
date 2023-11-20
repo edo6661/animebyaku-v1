@@ -16,6 +16,10 @@ export const AnimeProvider = ({ children }: ChildrenType) => {
 	const [season, setSeason] = useState("fall")
 	const [year, setYear] = useState(2023)
 
+	const [open, setOpen] = useState(false);
+	const toggleNav = () => setOpen(prev => !prev)
+
+
 	const { data: topAnimes, isLoading: loadingTopAnime, isError: isErrorTopAnime, error: errorTopAnime } = useQuery({
 		queryKey: ['topAnime', { topAnimePage }],
 		queryFn: () => getRequestTopAnime(topAnimePage.toString()),
@@ -83,6 +87,9 @@ export const AnimeProvider = ({ children }: ChildrenType) => {
 			handleNextSeasonNow, handlePrevSeasonNow, handleNextUpComing, handlePrevUpComing, handleNextSeason, handlePrevSeason, handleNextRecom, handlePrevRecom, handleNextTopAnime, handlePrevTopAnime,
 			// ! season
 			season, setSeason, year, setYear,
+
+			// ! nav
+			open, setOpen, toggleNav
 
 		}}>
 			{children}

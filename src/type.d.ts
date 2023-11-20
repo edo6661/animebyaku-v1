@@ -60,6 +60,11 @@ interface AnimeType {
 	handlePrevSeason: () => void;
 	handleNextRecom: () => void;
 	handlePrevRecom: () => void;
+
+	// ! nav
+	open: boolean;
+	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	toggleNav: () => void;
 }
 
 interface ChildrenType {
