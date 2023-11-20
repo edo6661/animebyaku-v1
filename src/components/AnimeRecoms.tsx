@@ -15,9 +15,10 @@ const SingleAnimeRecom = ({ mal_id }: Props) => {
     const loading = isLoading ? <TemporaryLoading /> : null
     const errorAndError = isError && error ? <TemporaryError message={error} /> : null
 
+
     return (
         <>
-            {anime && (
+            {!isLoading && !anime.length ? '' : (
                 <h3 className=' secondWrapper mt-4 mb-8 text-xl font-semibold   '>If you like this anime, you might like...
                 </h3>
             )}
@@ -28,18 +29,21 @@ const SingleAnimeRecom = ({ mal_id }: Props) => {
                     <AnimeRecom key={anime.entry.mal_id} {...anime} />
                 )}
             </article>
-            <div className="flex justify-center text-xl mt-6">
-                <Button
-                    className=" btn inline-block"
-                    size="lg"
-                    rounded="xl"
-                >
-                    <Link to={`recommendations`} className="text-lg" >
-                        SEE MORE RECOMMENDATIONS
-                    </Link>
-                </Button>
-
-            </div>
+            {!isLoading && !anime.length ? (
+                <h3 className="text-center font-bold text-2xl">0 recom from api</h3>
+            ) : (
+                <div className="flex justify-center text-xl mt-6">
+                    <Button
+                        className=" btn inline-block"
+                        size="lg"
+                        rounded="xl"
+                    >
+                        <Link to={`recommendations`} className="text-lg" >
+                            SEE MORE RECOMMENDATIONS
+                        </Link>
+                    </Button>
+                </div>
+            )}
         </>
     )
 }

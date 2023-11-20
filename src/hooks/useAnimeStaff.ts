@@ -5,6 +5,9 @@ const useAnimeStaff = (mal_id: string) => {
 	const { data, isLoading, isError, error } = useQuery({
 		queryKey: ['animeStaff', mal_id],
 		queryFn: () => getRequestAnimeStaff(mal_id),
+		staleTime: Infinity,
+		refetchOnWindowFocus: false,
+		refetchOnReconnect: false,
 	});
 
 	const staff = data ? getAnimeStaff(data.data) : [];

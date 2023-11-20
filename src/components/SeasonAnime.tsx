@@ -2,10 +2,9 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import hoverVars from "../helpers/hoverAnimation";
-import { AnimeData } from "../type";
 import HomeImageHovered from "./HomeImageHovered";
 
-const TopAnime = ({ images, title, mal_id, episodes, rank, source, type, year, genres, studios, score }: AnimeData) => {
+const SeasonAnime = ({ images, title, mal_id, episodes, rank, source, type, year, genres, studios, score, favorites }: UpComing) => {
 
     const [hover, setHover] = useState(false)
 
@@ -33,6 +32,7 @@ const TopAnime = ({ images, title, mal_id, episodes, rank, source, type, year, g
                     {hover &&
                         <HomeImageHovered hover={hover} episodes={episodes} title={title} score={score}
                             rank={rank} source={source} type={type} year={year} genres={genres} studios={studios}
+                            favorites={favorites}
                         />}
                 </Link>
 
@@ -44,4 +44,4 @@ const TopAnime = ({ images, title, mal_id, episodes, rank, source, type, year, g
     )
 }
 
-export default TopAnime
+export default SeasonAnime

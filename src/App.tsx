@@ -22,8 +22,6 @@ function App() {
 
       <main className=''>
         <Outlet />
-        {/* <Button onClick={handlePrev}>Prev</Button>
-        <Button onClick={handleNext}>next</Button> */}
       </main >
       <Footer />
 

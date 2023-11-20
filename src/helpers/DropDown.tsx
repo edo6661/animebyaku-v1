@@ -38,7 +38,7 @@ const Dropdown = ({ title, items }: DropdownType) => {
 			<ul className="daisyInnerDropdown">
 				{items.map((item, index) => (
 					<li key={index} className="dropdownContent">
-						<Link to={item.to}>{item.subtitle}</Link>
+						<Link to={`${item.to}`}>{item.subtitle}</Link>
 					</li>
 				))}
 			</ul>

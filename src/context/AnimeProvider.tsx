@@ -5,17 +5,24 @@ import { ChildrenType } from '../type';
 import { getTopAnime, getTopManga, getTopRandom } from '../utils/getDataSafe';
 import animeContext from './animeContext';
 export const AnimeProvider = ({ children }: ChildrenType) => {
-
 	// ! top anime
 
 	const [topAnimePage, setTopAnimePage] = useState(1);
+	const [seasonNowPage, setSeasonNowPage] = useState(1);
+	const [upComingPage, setUpComingPage] = useState(1);
+	const [recomPage, setRecomPage] = useState(1);
+
+	const [seasonPage, setSeasonPage] = useState(1);
+	const [season, setSeason] = useState("fall")
+	const [year, setYear] = useState(2023)
 
 	const { data: topAnimes, isLoading: loadingTopAnime, isError: isErrorTopAnime, error: errorTopAnime } = useQuery({
-		queryKey: ['animes', topAnimePage],
-		queryFn: () => getRequestTopAnime(topAnimePage.toString())
+		queryKey: ['topAnime', { topAnimePage }],
+		queryFn: () => getRequestTopAnime(topAnimePage.toString()),
 	})
 
 	const topAnime = topAnimes ? getTopAnime(topAnimes.data) : [];
+	const topAnimeData = topAnimes ? topAnimes.data : []
 
 	// ! top manga
 
@@ -26,6 +33,8 @@ export const AnimeProvider = ({ children }: ChildrenType) => {
 		queryFn: () => getRequestTopManga(topMangaPage.toString())
 	})
 
+	const topMangaData = topAnimes ? topAnimes.data : []
+
 	const topManga = topMangas ? getTopManga(topMangas.data) : [];
 
 	// ! random anime
@@ -35,22 +44,45 @@ export const AnimeProvider = ({ children }: ChildrenType) => {
 		queryFn: () => getRequestRandom()
 	})
 
-
 	// const randomAnime = randomsAnime ? getTopRandom(randomsAnime.data) : {};
 	const randomAnime = getTopRandom(randomsAnime ? randomsAnime.data : undefined)
 
 	// ! anime
 
+	// ! page
+	const handleNextTopAnime = () => setTopAnimePage((prev: number) => prev + 1)
+	const handlePrevTopAnime = () => setTopAnimePage((prev: number) => prev - 1)
+	const handleNextTopManga = () => setTopMangaPage((prev: number) => prev + 1)
+	const handlePrevTopManga = () => setTopMangaPage((prev: number) => prev - 1)
+	const handleNextSeasonNow = () => setSeasonNowPage((prev: number) => prev + 1)
+	const handlePrevSeasonNow = () => setSeasonNowPage((prev: number) => prev - 1)
+	const handleNextUpComing = () => setUpComingPage((prev: number) => prev + 1)
+	const handlePrevUpComing = () => setUpComingPage((prev: number) => prev - 1)
+	const handleNextSeason = () => setSeasonPage((prev: number) => prev + 1)
+	const handlePrevSeason = () => setSeasonPage((prev: number) => prev - 1)
+	const handleNextRecom = () => setRecomPage((prev: number) => prev + 1)
+	const handlePrevRecom = () => setRecomPage((prev: number) => prev - 1)
+
 	return (
 		<animeContext.Provider value={{
 			// ! top anime
-			topAnime, loadingTopAnime, topAnimePage, setTopAnimePage, isErrorTopAnime, errorTopAnime,
+			topAnime, loadingTopAnime, topAnimePage, setTopAnimePage, isErrorTopAnime, errorTopAnime, topAnimeData,
 
-			// ! top random
-			topMangaPage, loadingTopManga, setTopMangaPage, isErrorTopManga, errorTopManga, topManga,
+			// ! top manga
+			topMangaPage, loadingTopManga, setTopMangaPage, isErrorTopManga, errorTopManga, topManga, topMangaData,
 
 			// ! random anime
-			loadingRandom, isErrorRandom, errorRandom, randomAnime
+			loadingRandom, isErrorRandom, errorRandom, randomAnime,
+
+			// season
+			seasonNowPage, setSeasonNowPage, upComingPage, setUpComingPage, seasonPage, setSeasonPage, recomPage, setRecomPage,
+
+
+			// ! page
+			handleNextTopManga, handlePrevTopManga,
+			handleNextSeasonNow, handlePrevSeasonNow, handleNextUpComing, handlePrevUpComing, handleNextSeason, handlePrevSeason, handleNextRecom, handlePrevRecom, handleNextTopAnime, handlePrevTopAnime,
+			// ! season
+			season, setSeason, year, setYear,
 
 		}}>
 			{children}

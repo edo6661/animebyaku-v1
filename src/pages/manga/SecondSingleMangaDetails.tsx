@@ -43,7 +43,7 @@ const SecondSingleMangaDetails = ({ images, title, synopsis, genres, status, sco
 
     const elementGenres = genres.map((genre, index) =>
         <span className={` text-greenish`} key={genre.mal_id}>
-            {genre.name}
+            {/* {genre.name} */}
             {index < genres.length - 1 ? ', ' : ''}
         </span>
     )
@@ -54,7 +54,7 @@ const SecondSingleMangaDetails = ({ images, title, synopsis, genres, status, sco
             <p>{synopsis}</p>
         </>
     )
-    return (    
+    return (
         <>
             {lessMd ? (
                 <article className={`containerAnimeDetails`}>

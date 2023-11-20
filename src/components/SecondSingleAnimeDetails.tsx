@@ -72,7 +72,9 @@ const SecondSingleAnimeDetails = ({ images, title, synopsis, genres, status, epi
                     <div className={`innerDetailsMd`}>
                         <p className="text-center">{upperFirst(season)} {year}</p>
                         <div className="flexBetween">
-                            <p>{studios[0].name}</p>
+                            {studios[0].name.length && (
+                                <p>{studios[0].name}</p>
+                            )}
                             <p>{episodes} Eps</p>
                             <p>{status == 'Finished Airing' ? 'Finish' : 'Airing'}</p>
                         </div>
@@ -97,7 +99,8 @@ const SecondSingleAnimeDetails = ({ images, title, synopsis, genres, status, epi
                             <div className="innerDetails ">
                                 <p>{upperFirst(season)} {year}  </p>
                                 <span><RxDividerVertical size={32} /></span>
-                                <p>{studios[0].name}</p>
+
+                                {studios[0]?.name ? <p>{studios[0].name}</p> : <p>0 from api</p>}
                                 <span><RxDividerVertical size={32} /></span>
                                 <p>{episodes} Eps</p>
                                 <span><RxDividerVertical size={32} /></span>

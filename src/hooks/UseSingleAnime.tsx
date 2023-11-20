@@ -4,7 +4,7 @@ import { getTopAnimeById } from '../utils/getDataSafe';
 
 const UseSingleAnime = (mal_id: string) => {
     const { data, isLoading, isError, error } = useQuery({
-        queryKey: ['anime', mal_id],
+        queryKey: ['singleAnime', mal_id],
         queryFn: () => getRequestAnimeById(mal_id)
     })
 

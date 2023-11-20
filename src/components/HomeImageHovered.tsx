@@ -15,10 +15,9 @@ type Props = {
     studios?: Genre[]
     title: string;
     votes?: number
+    favorites?: number
 }
-const HomeImageHovered = ({ hover, episodes, rank, source, type, year, score, status, chapters, genres, studios, title, votes }: Props) => {
-
-
+const HomeImageHovered = ({ hover, episodes, rank, source, type, year, score, status, chapters, genres, studios, title, votes, favorites }: Props) => {
     const divVars = {
         hidden: {
             opacity: 0,
@@ -45,18 +44,24 @@ const HomeImageHovered = ({ hover, episodes, rank, source, type, year, score, st
         >
             <p className='hoverImageTitle'>{title} </p>
             <hr className='my-1' />
-            <p>{episodes} {type}</p>
-            {source && <p>{source}</p>}
+            {episodes !== null && type !== '' && <p>{episodes} {type}</p>}
+            {source !== '' && <p>{source}</p>}
             {studios?.length && <p>{studios[0].name}</p>}
-            {status && <p>Status {status}</p>}
+            {status?.length && <p>Status {status}</p>}
             {chapters && <p>Chapters {chapters}</p>}
-            <p>{year}</p>
+            {year && <p>{year}</p>}
+            {votes && (
+                <p>{votes}</p>
+            )}
+            {favorites && (
+                <p>{favorites} Fav</p>
+            )}
             <div className='genres'>
-                {genres && genres?.map((genre) =>
+                {genres?.length && genres?.map((genre) =>
                     <span key={genre.mal_id} className='text-center'>{genre.name.split(" ").join(", ")}</span>
                 )}
             </div>
-            {rank && (
+            {rank && rank && rank !== null && score !== null && score && (
                 <div className="flexBetween items-center ">
                     <p>#{rank}</p>
                     <div className='relative right-0 flex items-center'>
@@ -65,9 +70,7 @@ const HomeImageHovered = ({ hover, episodes, rank, source, type, year, score, st
                     </div>
                 </div>
             )}
-            {votes && (
-                <p>{votes}</p>
-            )}
+
         </motion.div>
     )
 }

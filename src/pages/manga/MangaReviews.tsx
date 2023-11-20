@@ -17,7 +17,7 @@ const MangaReviews = () => {
 
     const { manga, isLoading: loadingAnime, isError: isErrorAnime, error: errorAnime } = useSingleManga(mal_id ?? '')
 
-    if (isLoading || loadingAnime) <TemporaryLoading />
+    if (isLoading || loadingAnime) return <TemporaryLoading />
     if (isError || error || isErrorAnime || errorAnime) <TemporaryError message={error ?? ''} />
 
     const noReview = !reviews.length && !isLoading && <h2 className="text-center font-semibold sm:text-3xl text-2xl">0 reviews from api</h2>

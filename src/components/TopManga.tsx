@@ -14,7 +14,7 @@ const TopManga = ({ images, title, rank, score, status, chapters, mal_id, genres
     return (
         <>
             <div className="innerTop relative">
-                <Link to={`manga/${mal_id}`}
+                <Link to={`/manga/${mal_id}`}
                     className=""
                 >
                     <motion.img

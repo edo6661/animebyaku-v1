@@ -110,7 +110,7 @@
 		@apply max-w-6xl mx-auto;
 	}
 	.secondWrapper {
-		@apply max-w-5xl mx-auto;
+		@apply max-w-5xl mx-auto my-10;
 	}
 	.dropdownButton {
 		@apply btn font-extrabold border-x-0 text-white border-y-4  border-opacity-30 border-white  bg-transparent;
@@ -382,5 +382,13 @@
 	}
 	.innerReactions {
 		@apply flex gap-2 px-2 py-1;
+	}
+	/* ! all top anime */
+	.wrapperButtonPagination {
+		@apply flex mx-auto justify-center items-center mt-12 flex-wrap;
+	}
+	/* ! recommendation */
+	.containerRecommendation {
+		@apply flex flex-col gap-8;
 	}
 }

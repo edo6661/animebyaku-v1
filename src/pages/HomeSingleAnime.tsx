@@ -20,7 +20,7 @@ const HomeSingleAnime = () => {
         <>
             <section>
                 {noAnime}
-                {anime && (
+                {anime && !isLoading && (
                     <SecondSingleAnimeDetails
                         images={anime?.images}
                         title={anime?.title}

@@ -9,23 +9,30 @@ import {
 } from 'react-router-dom';
 import App from './App.tsx';
 import AllAnimeRecom from './components/AllAnimeRecom.tsx';
-import AllTopAnime from './components/AllTopAnime.tsx';
-import AllTopManga from './components/AllTopManga.tsx';
 import AnimeReviews from './components/AnimeReview/AnimeReviews.tsx';
 import NotFound from './components/NotFound.tsx';
 import { AnimeProvider } from './context/AnimeProvider.tsx';
 import './index.css';
 import AllAnimeCharacters from './pages/AllAnimeCharacters.tsx';
 import AllAnimeStaff from './pages/AllAnimeStaff.tsx';
+import AllTopAnime from './pages/AllTopAnime.tsx';
+import AllTopManga from './pages/AllTopManga.tsx';
+import AnimeSeason from './pages/AnimeSeason.tsx';
 import HomeSingleAnime from './pages/HomeSingleAnime.tsx';
 import Homepage from './pages/Homepage.tsx';
+import HomepageSeason from './pages/HomepageSeason.tsx';
+import Recommendation from './pages/Recommendation.tsx';
+import Season from './pages/Season.tsx';
+import SeasonNow from './pages/SeasonNow.tsx';
 import SingleAnime from './pages/SingleAnime.tsx';
 import SingleManga from './pages/SingleManga.tsx';
+import UpComing from './pages/UpComing.tsx';
 import AllMangaCharacters from './pages/manga/AllMangaCharacters.tsx';
 import AllMangaRecom from './pages/manga/AllMangaRecom.tsx';
 import AllMangaStaff from './pages/manga/AllMangaStaff.tsx';
 import HomeSingleManga from './pages/manga/HomeSingleManga.tsx';
 import MangaReviews from './pages/manga/MangaReviews.tsx';
+
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter(
@@ -52,12 +59,24 @@ const router = createBrowserRouter(
         <Route path="characters" element={<AllMangaCharacters />} />
         <Route path="staff" element={<AllMangaStaff />} />
       </Route>
+
       <Route path="/topAnime" element={<AllTopAnime />} />
+
       <Route path="/topManga" element={<AllTopManga />} />
+
+      <Route path="/season" element={<AnimeSeason />} >
+        <Route index element={<HomepageSeason />} />
+        <Route path="upComing" element={<UpComing />} />
+        <Route path="seasonNow" element={<SeasonNow />} />
+        <Route path="season" element={<Season />} />
+        <Route path="recommendation" element={<Recommendation />} />
+      </Route>
+
       <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
+
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

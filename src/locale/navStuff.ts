@@ -5,15 +5,11 @@ const anime = [
 	},
 	{
 		subtitle: 'Anime recommendations',
-		to: 'recomendation',
+		to: '/season/recommendation',
 	},
 	{
-		subtitle: 'Browse all anime',
-		to: 'all',
-	},
-	{
-		subtitle: 'Top anime list',
-		to: 'top',
+		subtitle: 'Top Anime',
+		to: 'topAnime',
 	},
 ];
 const manga = [

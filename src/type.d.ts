@@ -6,23 +6,60 @@ interface AnimeType {
 	errorRandom: QueryError | null;
 	// ! top anime
 	topAnime: AnimeData[] | undefined;
+	topAnimeData: {
+		data: AnimeData[];
+		pagination: Pagination;
+	};
 	loadingTopAnime: boolean;
-	topAnimePage: number;
+	topAnimePage: number | string;
 	setTopAnimePage: React.Dispatch<React.SetStateAction<number>>;
 	isErrorTopAnime: boolean;
 
 	// ! top manga
 	topManga: MangaData[] | undefined;
 	loadingTopManga: boolean;
-	topMangaPage: number;
-	setTopMangaPage: React.Dispatch<React.SetStateAction<number>>;
+	topMangaData: {
+		data: MangaData[];
+		pagination: Pagination;
+	};
 	isErrorTopManga: boolean;
+	topMangaPage: number | string;
+	setTopMangaPage: React.Dispatch<React.SetStateAction<number>>;
+
+	// ! season
+	seasonNowPage: number | string;
+	setSeasonNowPage: React.Dispatch<React.SetStateAction<number>>;
+	upComingPage: number | string;
+	setUpComingPage: React.Dispatch<React.SetStateAction<number>>;
+	recomPage: number | string;
+	setRecomPage: React.Dispatch<React.SetStateAction<number>>;
+
+	seasonPage: number;
+	setSeasonPage: React.Dispatch<React.SetStateAction<number>>;
+	season: string;
+	setSeason: React.Dispatch<React.SetStateAction<string>>;
+	year: number;
+	setYear: React.Dispatch<React.SetStateAction<number>>;
 
 	// ! random anime
 
 	randomAnime: RandomAnimeData;
 	loadingRandom: boolean;
 	isErrorRandom: boolean;
+
+	// ! pagination
+	handleNextTopAnime: () => void;
+	handlePrevTopAnime: () => void;
+	handleNextTopManga: () => void;
+	handlePrevTopManga: () => void;
+	handleNextSeasonNow: () => void;
+	handlePrevSeasonNow: () => void;
+	handleNextUpComing: () => void;
+	handlePrevUpComing: () => void;
+	handleNextSeason: () => void;
+	handlePrevSeason: () => void;
+	handleNextRecom: () => void;
+	handlePrevRecom: () => void;
 }
 
 interface ChildrenType {

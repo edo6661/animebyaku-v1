@@ -15,11 +15,11 @@ interface ButtonProps {
 const Button = ({ children, onClick, color = 'pr', size = 'md', rounded = 'none', type = 'submit', className = '', disabled = false }: ButtonProps) => {
 
     const buttonStyle = variant(
-        ' disabled:opacity-70 disabled:cursor-not-allowed',
+        ' ',
         {
             color: {
                 pr: 'primaryColor',
-                test: 'bg-red-500 shadow-md shadow-red-500'
+                sc: 'btn'
             },
             size: {
                 lg: 'py-3 px-6',

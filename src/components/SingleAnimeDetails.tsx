@@ -20,7 +20,7 @@ const SingleAnimeDetails = ({ episodes, studios, season, score, rank, year }: Pr
         <>
             <div className='innerSingleAnimeDetails'>
                 <p>{episodes} Eps</p>
-                <span><LiaGripLinesVerticalSolid color='white' size={40} /></span>
+                <span><LiaGripLinesVerticalSolid color='white' size={40} /> </span>
             </div>
             <div className='innerSingleAnimeDetails'>
                 <p>{studios && studios.length > 0 ? studios[0].name : <TemporaryLoading />}</p>

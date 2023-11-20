@@ -11,12 +11,11 @@ const AllAnimeStaff = () => {
 
     const { manga, isLoading: loadingAnime, isError: isErrorAnime, error: errorAnime } = useSingleManga(mal_id ?? '')
 
-    if (isLoading || loadingAnime) <TemporaryLoading />
+    if (isLoading || loadingAnime) return <TemporaryLoading />
     if (isError || error || isErrorAnime || errorAnime) <TemporaryError message={error ?? ''} />
 
     const staffHasImage = staff.filter(s => s.person.images.jpg.image_url !== 'https://cdn.myanimelist.net/images/questionmark_23.gif?s=f7dcbc4a4603d18356d3dfef8abd655c')
-    const noStaff = !staff.length && !isLoading && <h2 className=" col-span-full mx-auto text-center font-semibold sm:text-3xl text-2xl">0 reviews from api</h2>
-
+    const noStaff = !staff.length && !isLoading && <h2 className=" col-span-full mx-auto text-center font-semibold sm:text-3xl text-2xl">0 staff from api</h2>
     return (
         <section className="secondWrapper">
             <article className="containerAllAnime">

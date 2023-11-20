@@ -50,6 +50,11 @@ type ResponseCharactersManga = {
 	data: CharacterMangas[];
 };
 
+type ResponseUpComing = {
+	data: UpComing[];
+	pagination: PaginationUpComing;
+};
+
 const getTopAnime = (response: ResponseTopAnime) => {
 	return response && response.data ? response.data : [];
 };
@@ -277,6 +282,27 @@ const getMangaReview = (response: ResponseReviewManga) => {
 const getMangaCharacters = (response: ResponseCharactersManga) => {
 	return response && response.data ? response.data : [];
 };
+const getMangaStaff = (response: ResponseCharactersManga) => {
+	return response && response.data ? response.data : [];
+};
+
+// ! seasons
+const getUpComing = (response: ResponseUpComing) => {
+	return response && response.data ? response.data : [];
+};
+const getSeasonNow = (response: ResponseSeasonNow) => {
+	return response && response.data ? response.data : [];
+};
+const getSeasonList = (response: ResponseSeasonList) => {
+	return response && response.data ? response.data : [];
+};
+const getSeason = (response: Season) => {
+	return response && response.data ? response.data : [];
+};
+const getRecommendation = (response: ResponseRecomUser) => {
+	return response && response.data ? response.data : [];
+};
+
 export {
 	getAnimeCharacters,
 	getAnimeRecom,
@@ -285,9 +311,15 @@ export {
 	getMangaCharacters,
 	getMangaRecom,
 	getMangaReview,
+	getMangaStaff,
+	getRecommendation,
+	getSeason,
+	getSeasonList,
+	getSeasonNow,
 	getTopAnime,
 	getTopAnimeById,
 	getTopManga,
 	getTopMangaById,
 	getTopRandom,
+	getUpComing,
 };
