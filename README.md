@@ -1,5 +1,5 @@
 ```markdown
-# React + TypeScript + Vite + Framer Motion + React Query + Axios + DaisyUI
+# React + TypeScript + Vite + Framer Motion + React Query + Axios + DaisyUI + TailwindCSS
 
 ## API
 
