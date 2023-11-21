@@ -1,11 +1,11 @@
 ```markdown
-# Proyek Anime dengan React + TypeScript + Vite + Framer Motion + React Query + Axios
+# React + TypeScript + Vite + Framer Motion + React Query + Axios + DaisyUI
 
 ## API
 
 **https://api.jikan.moe/v4**
 
-## Design
+## Design Reference
 
 **https://www.anime-planet.com/**
 ```
