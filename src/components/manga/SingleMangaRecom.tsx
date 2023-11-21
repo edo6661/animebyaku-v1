@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import useMangaRecom from "../../hooks/manga/useMangaRecom"
-import AnimeRecom from "../AnimeRecom"
 import TemporaryError from "../TemporaryError"
 import TemporaryLoading from "../TemporaryLoading"
 import Button from "../style/Button"
+import MangaRecom from "./MangaRecom"
 
 type Props = {
     mal_id: string
@@ -25,7 +25,7 @@ const SingleMangaRecom = ({ mal_id }: Props) => {
             {errorAndError}
             <article className="wrapperAnimeRecom">
                 {manga.slice(0, 4).map(manga =>
-                    <AnimeRecom key={manga.entry.mal_id} {...manga} />
+                    <MangaRecom key={manga.entry.mal_id} {...manga} />
                 )}
             </article>
             <div className="flex justify-center text-xl mt-6">

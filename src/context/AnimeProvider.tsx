@@ -51,21 +51,60 @@ export const AnimeProvider = ({ children }: ChildrenType) => {
 	// const randomAnime = randomsAnime ? getTopRandom(randomsAnime.data) : {};
 	const randomAnime = getTopRandom(randomsAnime ? randomsAnime.data : undefined)
 
-	// ! anime
+	// ! scroll
+	const scrollToTop = () => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	};
 
 	// ! page
-	const handleNextTopAnime = () => setTopAnimePage((prev: number) => prev + 1)
-	const handlePrevTopAnime = () => setTopAnimePage((prev: number) => prev - 1)
-	const handleNextTopManga = () => setTopMangaPage((prev: number) => prev + 1)
-	const handlePrevTopManga = () => setTopMangaPage((prev: number) => prev - 1)
-	const handleNextSeasonNow = () => setSeasonNowPage((prev: number) => prev + 1)
-	const handlePrevSeasonNow = () => setSeasonNowPage((prev: number) => prev - 1)
-	const handleNextUpComing = () => setUpComingPage((prev: number) => prev + 1)
-	const handlePrevUpComing = () => setUpComingPage((prev: number) => prev - 1)
-	const handleNextSeason = () => setSeasonPage((prev: number) => prev + 1)
-	const handlePrevSeason = () => setSeasonPage((prev: number) => prev - 1)
-	const handleNextRecom = () => setRecomPage((prev: number) => prev + 1)
-	const handlePrevRecom = () => setRecomPage((prev: number) => prev - 1)
+	const handleNextTopAnime = () => {
+		setTopAnimePage((prev: number) => prev + 1)
+		scrollToTop()
+	}
+	const handlePrevTopAnime = () => {
+		setTopAnimePage((prev: number) => prev - 1)
+		scrollToTop()
+	}
+	const handleNextTopManga = () => {
+		setTopMangaPage((prev: number) => prev + 1)
+		scrollToTop()
+	}
+	const handlePrevTopManga = () => {
+		setTopMangaPage((prev: number) => prev - 1)
+		scrollToTop()
+	}
+	const handleNextSeasonNow = () => {
+		setSeasonNowPage((prev: number) => prev + 1)
+		scrollToTop()
+	}
+	const handlePrevSeasonNow = () => {
+		setSeasonNowPage((prev: number) => prev - 1)
+		scrollToTop()
+	}
+	const handleNextUpComing = () => {
+		setUpComingPage((prev: number) => prev + 1)
+		scrollToTop()
+	}
+	const handlePrevUpComing = () => {
+		setUpComingPage((prev: number) => prev - 1)
+		scrollToTop()
+	}
+	const handleNextSeason = () => {
+		setSeasonPage((prev: number) => prev + 1)
+		scrollToTop()
+	}
+	const handlePrevSeason = () => {
+		setSeasonPage((prev: number) => prev - 1)
+		scrollToTop()
+	}
+	const handleNextRecom = () => {
+		setRecomPage((prev: number) => prev + 1)
+		scrollToTop()
+	}
+	const handlePrevRecom = () => {
+		setRecomPage((prev: number) => prev - 1)
+		scrollToTop()
+	}
 
 	return (
 		<animeContext.Provider value={{

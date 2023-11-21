@@ -119,6 +119,14 @@ const getRequestRecomAnime = async () => {
 		console.error(error);
 	}
 };
+const getRequestRecomManga = async () => {
+	try {
+		const response = axiosAku.get(`/recommendations/manga`);
+		return response;
+	} catch (error) {
+		console.error(error);
+	}
+};
 
 // ! manga
 
@@ -179,6 +187,7 @@ export {
 	getRequestMangaStaff,
 	getRequestRandom,
 	getRequestRecomAnime,
+	getRequestRecomManga,
 	getRequestSeason,
 	getRequestSeasonList,
 	getRequestSeasonNow,

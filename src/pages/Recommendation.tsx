@@ -17,7 +17,7 @@ const Recommendation = () => {
             <article className="containerRecommendation">
                 {!isLoading && userRecom.sort(() => Math.random() - 0.5).slice(0, 25).map((recom, i) => {
                     return (
-                        <div key={i} className='flex flex-col gap-2 border-b-4 py-4 border-solid border-main'>
+                        <div key={i} className='innerRecommendation'>
                             <div>
                                 <a className='text-xl font-semibold' href={recom.user.url} target='_blank'>
                                     {recom.user.username}
@@ -26,10 +26,10 @@ const Recommendation = () => {
 
                             </div>
                             <p className=''>{recom.content}</p>
-                            <div className='grid md:grid-cols-2 justify-center gap-y-4 my-2'>
+                            <div className='detailsRecommendation'>
                                 {recom.entry.map((e, i) => {
                                     return (
-                                        <div key={i} className='flex flex-col gap-1 text-center justify-center mx-auto items-center '>
+                                        <div key={i} className='secondDetailsRecommedation '>
                                             <p className='text-pinky font-semibold text-lg'>{e.title}</p>
                                             <Link to={`/anime/${e.mal_id}`}>
                                                 <img

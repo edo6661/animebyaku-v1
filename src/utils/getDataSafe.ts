@@ -302,6 +302,9 @@ const getSeason = (response: Season) => {
 const getRecommendation = (response: ResponseRecomUser) => {
 	return response && response.data ? response.data : [];
 };
+const getMangaRecommendation = (response: ResponseRecomUser) => {
+	return response && response.data ? response.data : [];
+};
 
 export {
 	getAnimeCharacters,
@@ -310,6 +313,7 @@ export {
 	getAnimeStaff,
 	getMangaCharacters,
 	getMangaRecom,
+	getMangaRecommendation,
 	getMangaReview,
 	getMangaStaff,
 	getRecommendation,
@@ -321,5 +325,6 @@ export {
 	getTopManga,
 	getTopMangaById,
 	getTopRandom,
-	getUpComing,
+	getUpComing
 };
+

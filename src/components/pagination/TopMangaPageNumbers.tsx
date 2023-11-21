@@ -40,7 +40,11 @@ const TopMangaPageNumbers = ({ topMangaPage, topMangaData, setTopMangaPage }: Pr
             return (
                 <Button
                     key={index}
-                    onClick={() => number !== '..' && setTopMangaPage(+number)}
+                    onClick={() => {
+                        number !== '..' && setTopMangaPage(+number);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                    }
                     color={`${bg}`}
                     className={`${opacity}`}
                 >

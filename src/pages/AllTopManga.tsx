@@ -1,6 +1,7 @@
 import { GrFormNextLink, GrFormPreviousLink } from 'react-icons/gr';
 import SkeletonTopAnime from "../components/SkeletonTopAnime";
 import TopManga from "../components/TopManga";
+import HeaderManga from '../components/manga/HeaderManga';
 import TopMangaPageNumbers from "../components/pagination/TopMangaPageNumbers";
 import Button from "../components/style/Button";
 import useAnime from "../hooks/useAnime";
@@ -18,28 +19,33 @@ const AllTopManga = () => {
 
 
     return (
-        <section className="sectionTop">
-            <article className="wrapperTop">
-                {skeletonAndData}
-                {errorAndError}
-            </article>
-            {!loadingTopManga && topMangaData && topMangaData.pagination && typeof topMangaData.pagination.last_visible_page !== 'undefined' &&
-                (
-                    <div className="wrapperButtonPagination">
-                        <Button color="sc" onClick={handlePrevTopManga}
-                            disabled={topMangaPage === 1}
-                        >
+        <>
+            <HeaderManga />
 
-                            <GrFormPreviousLink size={25} />
-                        </Button>
-                        <TopMangaPageNumbers topMangaData={topMangaData} setTopMangaPage={setTopMangaPage} topMangaPage={+topMangaPage} />
-                        <Button color="sc" onClick={handleNextTopManga}
-                            disabled={topMangaPage === topMangaData.pagination.last_visible_page}>
-                            <GrFormNextLink size={25} />
-                        </Button>
-                    </div>
-                )}
-        </section>
+
+            <section className="sectionTop">
+                <article className="wrapperTop">
+                    {skeletonAndData}
+                    {errorAndError}
+                </article>
+                {!loadingTopManga && topMangaData && topMangaData.pagination && typeof topMangaData.pagination.last_visible_page !== 'undefined' &&
+                    (
+                        <div className="wrapperButtonPagination">
+                            <Button color="sc" onClick={handlePrevTopManga}
+                                disabled={topMangaPage === 1}
+                            >
+
+                                <GrFormPreviousLink size={25} />
+                            </Button>
+                            <TopMangaPageNumbers topMangaData={topMangaData} setTopMangaPage={setTopMangaPage} topMangaPage={+topMangaPage} />
+                            <Button color="sc" onClick={handleNextTopManga}
+                                disabled={topMangaPage === topMangaData.pagination.last_visible_page}>
+                                <GrFormNextLink size={25} />
+                            </Button>
+                        </div>
+                    )}
+            </section>
+        </>
     )
 }
 

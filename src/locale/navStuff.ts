@@ -4,7 +4,7 @@ const anime = [
 		to: 'season',
 	},
 	{
-		subtitle: 'Anime recommendations',
+		subtitle: 'Random Recommendation',
 		to: '/season/recommendation',
 	},
 	{
@@ -14,20 +14,12 @@ const anime = [
 ];
 const manga = [
 	{
-		subtitle: 'Manga season charts',
-		to: 'season',
+		subtitle: 'Top Manga',
+		to: 'topManga',
 	},
 	{
-		subtitle: 'Manga recommendations',
-		to: 'recomendation',
-	},
-	{
-		subtitle: 'Browse all manga',
-		to: 'all',
-	},
-	{
-		subtitle: 'Top manga list',
-		to: 'top',
+		subtitle: 'Random Recommendation',
+		to: 'mangaRecommendation',
 	},
 ];
 

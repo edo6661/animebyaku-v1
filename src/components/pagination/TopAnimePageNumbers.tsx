@@ -38,10 +38,14 @@ const TopAnimePageNumbers = ({ topAnimePage, topAnimeData, setTopAnimePage }: Pr
         return pageNumbers.map((number, index) => {
             const bg = number === topAnimePage ? 'pr' : 'sc'
             const opacity = number === topAnimePage && 'opacity-70'
+
             return (
                 <Button
                     key={index}
-                    onClick={() => number !== '..' && setTopAnimePage(+number)}
+                    onClick={() => {
+                        number !== '..' && setTopAnimePage(+number);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
                     color={`${bg}`}
                     className={`${opacity}`}
                 >

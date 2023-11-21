@@ -31,7 +31,7 @@
 		@apply font-lato py-2 xl:text-2xl font-bold md:text-xl px-8;
 	}
 	footer {
-		@apply bg-footer;
+		@apply bg-footer py-4;
 	}
 	header {
 		@apply bg-header;
@@ -390,5 +390,14 @@
 	/* ! recommendation */
 	.containerRecommendation {
 		@apply flex flex-col gap-8;
+	}
+	.innerRecommendation {
+		@apply flex flex-col gap-2 border-b-4 py-4 border-solid border-main;
+	}
+	.detailsRecommendation {
+		@apply grid md:grid-cols-2 justify-center gap-y-4 my-2;
+	}
+	.secondDetailsRecommedation {
+		@apply flex flex-col gap-1 text-center justify-center mx-auto items-center;
 	}
 }

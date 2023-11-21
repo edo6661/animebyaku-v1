@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Dropdown from '../helpers/DropDown';
 import useAnime from '../hooks/useAnime';
 import useWindowWidth from '../hooks/useWindowWidth';
-import { anime, chara, manga } from '../locale/navStuff';
+import { anime, manga } from '../locale/navStuff';
 import InputSearch from './InputSearch';
 
 const Header = () => {
@@ -19,7 +19,6 @@ const Header = () => {
         <>
             <Dropdown title='Anime' items={anime} />
             <Dropdown title='Manga' items={manga} />
-            <Dropdown title='Characters' items={chara} />
         </>
     )
 

@@ -22,8 +22,6 @@ import HomeSingleAnime from './pages/HomeSingleAnime.tsx';
 import Homepage from './pages/Homepage.tsx';
 import HomepageSeason from './pages/HomepageSeason.tsx';
 import Recommendation from './pages/Recommendation.tsx';
-import Season from './pages/Season.tsx';
-import SeasonNow from './pages/SeasonNow.tsx';
 import SingleAnime from './pages/SingleAnime.tsx';
 import SingleManga from './pages/SingleManga.tsx';
 import UpComing from './pages/UpComing.tsx';
@@ -31,6 +29,7 @@ import AllMangaCharacters from './pages/manga/AllMangaCharacters.tsx';
 import AllMangaRecom from './pages/manga/AllMangaRecom.tsx';
 import AllMangaStaff from './pages/manga/AllMangaStaff.tsx';
 import HomeSingleManga from './pages/manga/HomeSingleManga.tsx';
+import MangaRecommendation from './pages/manga/MangaRecommendation.tsx';
 import MangaReviews from './pages/manga/MangaReviews.tsx';
 
 const queryClient = new QueryClient();
@@ -67,11 +66,9 @@ const router = createBrowserRouter(
       <Route path="/season" element={<AnimeSeason />} >
         <Route index element={<HomepageSeason />} />
         <Route path="upComing" element={<UpComing />} />
-        <Route path="seasonNow" element={<SeasonNow />} />
-        <Route path="season" element={<Season />} />
         <Route path="recommendation" element={<Recommendation />} />
       </Route>
-
+      <Route path="/mangaRecommendation" element={<MangaRecommendation />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
