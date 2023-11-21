@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import HeaderSingleAnime from "../components/HeaderSingleAnime";
 import TemporaryError from "../components/TemporaryError";
@@ -28,6 +29,9 @@ const AllAnimeCharacters = () => {
     return (
 
         <section className="secondWrapper">
+            <Helmet>
+                <title>Characters</title>
+            </Helmet>
             <article className="containerAllAnime">
                 <div className="containerImageAnime">
                     <HeaderSingleAnime mal_id={mal_id ?? ''} image={anime?.images.webp.image_url ?? ''} />

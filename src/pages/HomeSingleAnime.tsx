@@ -1,10 +1,10 @@
+import Helmet from 'react-helmet'
 import { useParams } from "react-router-dom"
 import SingleAnimeRecom from "../components/AnimeRecoms"
 import SecondSingleAnimeDetails from "../components/SecondSingleAnimeDetails"
 import TemporaryError from "../components/TemporaryError"
 import TemporaryLoading from "../components/TemporaryLoading"
 import UseSingleAnime from "../hooks/UseSingleAnime"
-
 const HomeSingleAnime = () => {
     const { mal_id } = useParams()
 
@@ -18,6 +18,9 @@ const HomeSingleAnime = () => {
 
     return (
         <>
+            <Helmet>
+                <title>{anime?.title}</title>
+            </Helmet>
             <section>
                 {noAnime}
                 {anime && !isLoading && (

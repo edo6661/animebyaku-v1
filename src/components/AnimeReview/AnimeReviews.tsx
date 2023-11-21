@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import UseReview from "../../hooks/UseReview";
 import UseSingleAnime from "../../hooks/UseSingleAnime";
@@ -29,6 +30,9 @@ const AnimeReviews = () => {
 
     return (
         <section className="secondWrapper">
+            <Helmet>
+                <title>Reviews</title>
+            </Helmet>
             <article className="containerAllAnime">
                 <div className="containerImageAnime">
                     <HeaderSingleAnime mal_id={mal_id ?? ''} image={anime?.images.webp.image_url ?? ''} />

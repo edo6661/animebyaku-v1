@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import HeaderSingleAnime from "../../components/HeaderSingleAnime";
 import TemporaryError from "../../components/TemporaryError";
@@ -18,6 +19,9 @@ const AllAnimeStaff = () => {
     const noStaff = !staff.length && !isLoading && <h2 className=" col-span-full mx-auto text-center font-semibold sm:text-3xl text-2xl">0 staff from api</h2>
     return (
         <section className="secondWrapper">
+            <Helmet>
+                <title>Staff</title>
+            </Helmet>
             <article className="containerAllAnime">
                 <div className="containerImageAnime">
                     <HeaderSingleAnime mal_id={mal_id ?? ''} image={manga?.images.webp.image_url ?? ''} />

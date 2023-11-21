@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import SeasonAnime from "../components/SeasonAnime";
 import SkeletonTopAnime from "../components/SkeletonTopAnime";
@@ -30,6 +31,9 @@ const HomepageSeason = () => {
 
     return (
         <section className="sectionTop">
+            <Helmet>
+                <title>Season</title>
+            </Helmet>
             <article className="secondWrapper flex">
                 {seasonList.filter(item => item.year === 2023).map((s, i) => {
                     return (

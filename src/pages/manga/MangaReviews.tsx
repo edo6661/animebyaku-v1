@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import EmojiReactions from '../../components/EmojiReactions';
 import HeaderSingleAnime from '../../components/HeaderSingleAnime';
@@ -29,6 +30,9 @@ const MangaReviews = () => {
 
     return (
         <section className="secondWrapper">
+            <Helmet>
+                <title>Reviews</title>
+            </Helmet>
             <article className="containerAllAnime">
                 <div className="containerImageAnime">
                     <HeaderSingleAnime mal_id={mal_id ?? ''} image={manga?.images.webp.image_url ?? ''} />

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { Outlet } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -19,7 +20,9 @@ function App() {
   return (
     <>
       <Header />
-
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <main className=''>
         <Outlet />
       </main >

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import TemporaryLoading from '../../components/TemporaryLoading';
 import HeaderManga from '../../components/manga/HeaderManga';
@@ -11,7 +12,9 @@ const MangaRecommendation = () => {
     return (
         <>
             <HeaderManga />
-
+            <Helmet>
+                <title>Random Recommendation</title>
+            </Helmet>
 
             <section className="sectionTop ">
                 {errorAndError && (

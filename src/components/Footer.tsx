@@ -13,7 +13,7 @@ const Footer = () => {
     return (
         <footer>
             <div className="text-2xl wrapper flexBetween">
-                <p className=""> <span className=" text-pinky">&copy; By </span>Edo</p>
+                <p className=""> <span className=" text-pinky">&copy; </span>Halo Mamaah</p>
                 <SwitchTheme setTheme={setTheme} />
             </div>
         </footer>

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { GrFormNextLink, GrFormPreviousLink } from 'react-icons/gr';
 import SkeletonTopAnime from "../components/SkeletonTopAnime";
 import TopManga from "../components/TopManga";
@@ -20,6 +21,9 @@ const AllTopManga = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Top Manga</title>
+            </Helmet>
             <HeaderManga />
 
 

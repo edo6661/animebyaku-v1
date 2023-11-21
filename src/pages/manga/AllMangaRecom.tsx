@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router-dom';
 import TemporaryError from '../../components/TemporaryError';
 import TemporaryLoading from '../../components/TemporaryLoading';
@@ -36,6 +37,9 @@ const AllMangaRecom = () => {
 
     return (
         <section className="secondWrapper">
+            <Helmet>
+                <title>Recommendation</title>
+            </Helmet>
             <div className="wrapperAnimeRecom">
                 {noManga}
                 {manga.slice(0, 16).map((a) => {

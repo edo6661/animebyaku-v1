@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { useParams } from "react-router-dom"
 import TemporaryError from "../../components/TemporaryError"
 import TemporaryLoading from "../../components/TemporaryLoading"
@@ -17,6 +18,9 @@ const HomeSingleManga = () => {
     return (
         <>
             <section>
+                <Helmet>
+                    <title>{manga?.title}</title>
+                </Helmet>
                 {noManga}
                 {manga && (
                     <SecondSingleMangaDetails

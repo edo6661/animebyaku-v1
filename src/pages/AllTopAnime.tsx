@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import SeasonTopSection from "../components/SeasonTopSection";
 import SkeletonTopAnime from "../components/SkeletonTopAnime";
@@ -21,6 +22,9 @@ const AllTopAnime = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Top Anime</title>
+            </Helmet>
             <section className="singleAnimeSection">
                 <SeasonTopSection />
 

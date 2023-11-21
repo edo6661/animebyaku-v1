@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import TemporaryLoading from '../components/TemporaryLoading';
 import useUserRecom from "../hooks/useUserRecom";
@@ -9,6 +10,9 @@ const Recommendation = () => {
     if (isLoading) return <TemporaryLoading />
     return (
         <section className="sectionTop ">
+            <Helmet>
+                <title>Random Recommendation</title>
+            </Helmet>
             {errorAndError && (
                 <article className="wrapperTop">
                     {errorAndError}

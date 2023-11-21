@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router-dom';
 import UseAnimeRecom from "../hooks/UseAnimeRecom";
 import TemporaryError from "./TemporaryError";
@@ -32,6 +33,9 @@ const AllAnimeRecom = () => {
 
     return (
         <section className="secondWrapper">
+            <Helmet>
+                <title>Recommendation</title>
+            </Helmet>
             <div className="wrapperAnimeRecom">
                 {anime.slice(0, 16).map((a) => {
                     const { mal_id, title } = a.entry

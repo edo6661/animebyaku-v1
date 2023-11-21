@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr"
 import SkeletonTopAnime from "../components/SkeletonTopAnime"
 import UpComingAnime from "../components/UpComingAnime"
@@ -20,6 +21,9 @@ const UpComing = () => {
 
     return (
         <section className="sectionTop">
+            <Helmet>
+                <title>Up Coming</title>
+            </Helmet>
             <article className="wrapperTop">
                 {skeletonAndData}
                 {errorAndError}
