@@ -1,4 +1,4 @@
-# AnimeByaku Application
+# Anime by aq Application
 
 ## Technologies Used
 
